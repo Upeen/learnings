@@ -1,0 +1,3327 @@
+{
+  "roadmaps": [
+    {
+      "title": "SQL Roadmap",
+      "description": "A future-proof path to mastering SQL—from foundational querying to cloud-scale analytics, data modeling, and AI-integrated workflows.",
+      "image": "https://cdn.simpleicons.org/sqlite/003B57",
+      "difficulty": "beginner",
+      "tools": [
+        "Snowflake",
+        "Google BigQuery",
+        "Amazon Redshift",
+        "PostgreSQL (with pgvector)",
+        "Databricks SQL",
+        "dbt (data build tool)",
+        "DBeaver / DataGrip",
+        "Metabase / Looker Studio",
+        "Airflow / Dagster (orchestration)"
+      ],
+      "levels": {
+        "beginner": [
+          {
+            "topic": "SQL & Data Fundamentals",
+            "concepts": ["What is SQL?", "Relational vs Non-relational DBs", "Tables, Rows, Columns", "SQL Standards (ANSI SQL)", "Cloud DB Overview (BigQuery, Snowflake, etc.)"],
+            "description": "Understand core database concepts and where SQL fits in modern data stacks."
+          },
+          {
+            "topic": "Data Types & Schemas",
+            "concepts": ["INT, VARCHAR, BOOLEAN, DATE/TIMESTAMP", "JSON", "ARRAY", "STRUCT (BigQuery)", "GEOGRAPHY", "UUID"],
+            "description": "Work with modern data types including semi-structured formats."
+          },
+          {
+            "topic": "Basic Queries",
+            "concepts": ["SELECT, FROM, WHERE", "ORDER BY, LIMIT", "DISTINCT", "Simple Filtering"],
+            "description": "Retrieve and sort data from single tables."
+          },
+          {
+            "topic": "Filtering & Pattern Matching",
+            "concepts": ["AND/OR/NOT", "BETWEEN, IN", "LIKE / ILIKE", "IS NULL / IS NOT NULL", "Regular Expressions (REGEXP)"],
+            "description": "Precisely filter data using logical and pattern-based conditions."
+          },
+          {
+            "topic": "Query Clarity with Aliases",
+            "concepts": ["Column Aliases (AS)", "Table Aliases", "Quoting Identifiers"],
+            "description": "Improve readability and avoid ambiguity in queries."
+          },
+          {
+            "topic": "Aggregate Functions",
+            "concepts": ["COUNT, SUM, AVG, MIN, MAX", "APPROX_COUNT_DISTINCT", "Statistical Aggregates (STDDEV, VAR)"],
+            "description": "Summarize data for reporting and analysis."
+          },
+          {
+            "topic": "Grouping Data",
+            "concepts": ["GROUP BY", "HAVING", "ROLLUP / CUBE (for subtotals)"],
+            "description": "Create grouped summaries and hierarchical aggregations."
+          }
+        ],
+        "intermediate": [
+          {
+            "topic": "Relational Modeling",
+            "concepts": ["Primary & Foreign Keys", "One-to-Many, Many-to-Many", "Surrogate vs Natural Keys", "Soft Deletes"],
+            "description": "Design normalized tables with integrity constraints."
+          },
+          {
+            "topic": "Joins & Relationships",
+            "concepts": ["INNER, LEFT, RIGHT, FULL OUTER JOIN", "SELF JOIN", "CROSS JOIN", "LATERAL JOIN (PostgreSQL)", "Implicit vs Explicit JOINs"],
+            "description": "Combine data across multiple tables efficiently."
+          },
+          {
+            "topic": "Subqueries & CTEs (Basics)",
+            "concepts": ["Scalar Subqueries", "Correlated Subqueries", "Subqueries in WHERE/FROM", "WITH clause (CTE basics)"],
+            "description": "Break complex logic into readable, modular components."
+          },
+          {
+            "topic": "Set Operations",
+            "concepts": ["UNION / UNION ALL", "INTERSECT", "EXCEPT / MINUS"],
+            "description": "Merge or compare result sets from multiple queries."
+          },
+          {
+            "topic": "Data Modification",
+            "concepts": ["INSERT, UPDATE, DELETE", "UPSERT / MERGE (BigQuery, Snowflake)", "Bulk Operations"],
+            "description": "Safely modify data in transactional and analytical systems."
+          },
+          {
+            "topic": "Constraints & Data Quality",
+            "concepts": ["NOT NULL, UNIQUE, CHECK", "DEFAULT", "Foreign Key Constraints", "Assertions (in modern DBs)"],
+            "description": "Enforce data integrity at the database level."
+          },
+          {
+            "topic": "Conditional Logic",
+            "concepts": ["CASE WHEN", "COALESCE", "NULLIF", "IF / IFF (Snowflake/BigQuery)"],
+            "description": "Add branching logic directly in SQL."
+          },
+          {
+            "topic": "Built-in Functions",
+            "concepts": [
+              "String: CONCAT, SUBSTR, TRIM, LENGTH, UPPER/LOWER, SPLIT",
+              "Date/Time: CURRENT_TIMESTAMP, DATE_TRUNC, EXTRACT, DATE_DIFF, INTERVAL",
+              "Math: ROUND, CEIL, FLOOR, ABS, RAND",
+              "JSON: JSON_EXTRACT, JSON_PARSE, -> operator"
+            ],
+            "description": "Manipulate strings, dates, numbers, and semi-structured data."
+          }
+        ],
+        "advanced": [
+          {
+            "topic": "Advanced CTEs & Recursion",
+            "concepts": ["Recursive CTEs (for hierarchies)", "Multiple CTEs", "Materialized CTEs (Snowflake)"],
+            "description": "Solve hierarchical and iterative problems (e.g., org charts, bill of materials)."
+          },
+          {
+            "topic": "Window Functions",
+            "concepts": [
+              "ROW_NUMBER(), RANK(), DENSE_RANK()",
+              "LEAD(), LAG(), FIRST_VALUE(), LAST_VALUE()",
+              "PARTITION BY, ORDER BY in windows",
+              "Frame Clauses (ROWS/RANGE BETWEEN)",
+              "NTILE(), PERCENT_RANK(), CUME_DIST()"
+            ],
+            "description": "Perform calculations across related rows without collapsing groups."
+          },
+          {
+            "topic": "Performance & Indexing",
+            "concepts": ["Index Types (B-tree, Hash, Bitmap)", "Clustered vs Non-clustered", "Composite Indexes", "Covering Indexes", "EXPLAIN / QUERY PLAN", "Cost-Based Optimization"],
+            "description": "Diagnose and optimize slow queries using execution plans."
+          },
+          {
+            "topic": "Views & Materialized Views",
+            "concepts": ["Standard Views", "Materialized Views (BigQuery, Snowflake, PostgreSQL)", "Refresh Strategies", "Security via Views"],
+            "description": "Abstract complexity and precompute expensive queries."
+          },
+          {
+            "topic": "Transactions & Concurrency",
+            "concepts": ["ACID Properties", "BEGIN / COMMIT / ROLLBACK", "Isolation Levels (READ COMMITTED, SERIALIZABLE)", "Deadlock Handling"],
+            "description": "Ensure data consistency in multi-user environments."
+          },
+          {
+            "topic": "Stored Procedures & Functions",
+            "concepts": ["User-Defined Functions (UDFs)", "Stored Procedures (PL/pgSQL, T-SQL)", "JavaScript UDFs (BigQuery)", "Python UDFs (Snowflake)"],
+            "description": "Encapsulate reusable logic in the database."
+          },
+          {
+            "topic": "Triggers & Event-Driven Logic",
+            "concepts": ["AFTER / BEFORE Triggers", "INSTEAD OF Triggers", "Change Data Capture (CDC) alternatives"],
+            "description": "Automate actions on data changes (use sparingly in analytics)."
+          },
+          {
+            "topic": "Normalization & Modeling",
+            "concepts": ["1NF to BCNF", "Denormalization for Analytics", "Star Schema", "Slowly Changing Dimensions (SCD Type 1/2)"],
+            "description": "Balance normalization for OLTP vs denormalization for OLAP."
+          },
+          {
+            "topic": "Semi-Structured Data",
+            "concepts": ["JSON/ARRAY Functions", "Flattening Nested Data", "Variant (Snowflake)", "STRUCT/ARRAY (BigQuery)"],
+            "description": "Query modern data formats without rigid schemas."
+          },
+          {
+            "topic": "Temporary & Staging Tables",
+            "concepts": ["TEMP Tables", "Session-Scoped Tables", "Staging Tables in ELT Pipelines"],
+            "description": "Manage intermediate data during complex transformations."
+          },
+          {
+            "topic": "Pivoting & Dynamic SQL",
+            "concepts": ["PIVOT / UNPIVOT (Snowflake, SQL Server)", "Conditional Aggregation", "Dynamic SQL (cautiously)"],
+            "description": "Reshape data for reporting and dashboards."
+          },
+          {
+            "topic": "Time Series & Advanced Analytics",
+            "concepts": ["Time Bucketing (DATE_TRUNC)", "Gap Filling", "Sessionization", "Geospatial Functions (ST_DISTANCE, etc.)"],
+            "description": "Analyze temporal and spatial data patterns."
+          }
+        ],
+        "expert": [
+          {
+            "topic": "Modern Data Modeling",
+            "concepts": ["dbt (data build tool)", "Modular SQL with Jinja", "Incremental Models", "Documentation & Testing in dbt"],
+            "description": "Adopt analytics engineering best practices using the modern data stack."
+          },
+          {
+            "topic": "Cloud Data Warehousing",
+            "concepts": ["Snowflake (Warehouses, Time Travel)", "BigQuery (Slots, BI Engine)", "Redshift (RA3, Spectrum)", "Databricks SQL"],
+            "description": "Leverage cloud-native features for scalability and cost control."
+          },
+          {
+            "topic": "Performance at Scale",
+            "concepts": ["Query Profiling", "Workload Management (WLM)", "Caching Strategies", "Statistics & Histograms", "Auto-clustering (Snowflake)"],
+            "description": "Optimize large-scale analytical queries in cloud environments."
+          },
+          {
+            "topic": "Data Governance & Security",
+            "concepts": ["Row-Level Security (RLS)", "Dynamic Data Masking", "Column-Level Security", "Encryption (TDE, KMS)", "Audit Logging"],
+            "description": "Implement enterprise-grade security and compliance."
+          },
+          {
+            "topic": "Data Lineage & Observability",
+            "concepts": ["Query History", "Data Catalog Integration", "Monitoring Query Performance", "Cost Attribution"],
+            "description": "Track data flow and ensure reliability in production pipelines."
+          },
+          {
+            "topic": "Distributed & Federated Querying",
+            "concepts": ["Cross-Database Joins", "External Tables (S3, GCS)", "Federated Queries (BigQuery Omni)", "Sharding Strategies"],
+            "description": "Query data across systems without centralizing storage."
+          },
+          {
+            "topic": "SQL for AI & Vector Search",
+            "concepts": ["Vector Embeddings in SQL", "Cosine Similarity", "ANN Search (Snowflake Cortex, pgvector)", "Hybrid Search (keyword + vector)"],
+            "description": "Integrate AI/ML workflows directly into SQL pipelines."
+          },
+          {
+            "topic": "CI/CD for SQL",
+            "concepts": ["Version Control (Git)", "Testing Frameworks (dbt tests, pytest-sql)", "Deployment Pipelines (Airflow, Dagster)", "Schema Migration Tools"],
+            "description": "Treat SQL as production code with testing and automation."
+          }
+        ]
+      }
+    },
+    {
+      "title": "Python Roadmap",
+      "description": "Master Python programming from basics to advanced data science and automation.",
+      "image": "https://cdn.simpleicons.org/python/0AF",
+      "difficulty": "beginner",
+      "tools": ["PyCharm", "Jupyter Notebook", "VS Code", "Git", "Docker", "Flask", "FastAPI", "Streamlit", "Dash", "JupyterLab", "Postman", "Redis", "Celery", "Kubernetes", "AWS/GCP/Azure", "Grafana", "Prometheus"],
+      "levels": {
+        "beginner": [
+          {
+            "topic": "Variables & Data Types",
+            "concepts": ["int", "str", "bool", "float", "complex", "type()", "None", "Type casting"],
+            "description": "Store and manipulate different kinds of data."
+          },
+          {
+            "topic": "Basic I/O",
+            "concepts": ["print()", "input()", "comments", "docstrings", "f-strings", "format()"],
+            "description": "Interact with users and add code documentation."
+          },
+          {
+            "topic": "Control Flow",
+            "concepts": ["if", "elif", "else", "Nested conditions", "ternary operator", "match-case (Python 3.10+)"],
+            "description": "Write logic to control the flow of your program."
+          },
+          {
+            "topic": "Loops",
+            "concepts": ["for", "while", "break", "continue", "range()", "enumerate()", "zip()", "List comprehensions"],
+            "description": "Repeat tasks efficiently and loop through data structures."
+          },
+          {
+            "topic": "Functions",
+            "concepts": ["def", "Parameters", "Return values", "Scope", "*args", "**kwargs", "lambda", "Type hints"],
+            "description": "Organize code into reusable blocks with custom behavior."
+          }
+        ],
+        "intermediate": [
+          {
+            "topic": "Data Structures",
+            "concepts": ["Lists", "Tuples", "Dictionaries", "Sets", "NamedTuples", "Dataclasses", "Collections module", "List/Dict/Set comprehensions"],
+            "description": "Store and organize data efficiently."
+          },
+          {
+            "topic": "File Handling",
+            "concepts": ["Reading/Writing files", "CSV", "JSON", "Pickle", "Context Managers", "Pathlib", "YAML", "Excel files"],
+            "description": "Work with external data files."
+          },
+          {
+            "topic": "Exception Handling",
+            "concepts": ["try", "except", "finally", "raise", "Custom exceptions", "assert", "else clause", "Exception chaining"],
+            "description": "Handle errors gracefully and write more reliable code."
+          },
+          {
+            "topic": "Modules & Packages",
+            "concepts": ["import", "Creating your own modules", "__name__ == '__main__'", "pip", "virtual environments", "setup.py", "pyproject.toml", "Package distribution"],
+            "description": "Organize code into reusable and maintainable components."
+          },
+          {
+            "topic": "Object-Oriented Programming (OOP)",
+            "concepts": ["class", "__init__", "self", "Methods", "Inheritance", "super()", "Encapsulation", "Polymorphism", "Abstract classes", "Properties"],
+            "description": "Build complex programs using real-world modeling concepts."
+          },
+          {
+            "topic": "Lambda & Functional Tools",
+            "concepts": ["lambda", "map()", "filter()", "reduce()", "functools", "itertools", "Generator expressions", "Partial functions"],
+            "description": "Write concise, efficient data-processing code."
+          },
+          {
+            "topic": "Working with Data Formats",
+            "concepts": ["json", "csv libraries", "Parsing & writing", "pandas integration", "XML", "YAML", "Parquet", "Avro"],
+            "description": "Read and write structured data formats for APIs and datasets."
+          }
+        ],
+        "advanced": [
+          {
+            "topic": "Multithreading & Multiprocessing",
+            "concepts": ["threading", "multiprocessing", "GIL", "Concurrency", "asyncio", "async/await", "Thread pools", "Process pools", "Queue"],
+            "description": "Speed up tasks with parallel processing and thread management."
+          },
+          {
+            "topic": "Advanced OOP & Design Patterns",
+            "concepts": ["SOLID principles", "Singleton", "Factory", "Observer", "Decorator", "Strategy", "Adapter", "Repository pattern", "Dependency Injection"],
+            "description": "Design scalable and maintainable applications using proven patterns."
+          },
+          {
+            "topic": "Decorators",
+            "concepts": ["@decorator", "Function modification", "Class decorators", "Parameterized decorators", "functools.wraps", "Property decorators"],
+            "description": "Enhance functions with reusable logic."
+          },
+          {
+            "topic": "Generators & Iterators",
+            "concepts": ["yield", "Memory-efficient iteration", "generator expressions", "coroutines", "itertools", "Custom iterators", "Async generators"],
+            "description": "Create iterators that save memory."
+          },
+          {
+            "topic": "Context Managers",
+            "concepts": ["with statement", "Custom managers", "contextlib", "Database connections", "Resource management"],
+            "description": "Manage resources safely and automatically."
+          },
+          {
+            "topic": "Metaprogramming",
+            "concepts": ["Decorators", "Metaclasses", "Descriptors", "Duck Typing", "__getattr__", "__setattr__", "Monkey patching", "Introspection"],
+            "description": "Write code that manipulates code."
+          },
+          {
+            "topic": "Memory Management",
+            "concepts": ["Garbage Collection", "Reference Counting", "Memory Profiling", "memory_profiler", "Weak references", "Cyclic references"],
+            "description": "Understand and optimize Python's memory usage."
+          }
+        ],
+        "expert": [
+          {
+            "topic": "Logging & Monitoring",
+            "concepts": ["Logging levels", "basicConfig", "Writing logs to file", "RotatingFileHandler", "Structured logging", "Logging to cloud", "Application monitoring", "Metrics"],
+            "description": "Track application behavior and debug production issues."
+          },
+          {
+            "topic": "Profiling & Optimization",
+            "concepts": ["timeit", "cProfile", "Big-O analysis", "Memory usage", "PyPy", "Cython", "Numba", "Algorithm optimization", "Database optimization"],
+            "description": "Identify performance bottlenecks and write efficient code."
+          },
+          {
+            "topic": "Working with APIs",
+            "concepts": ["requests", "Parsing JSON", "Error handling", "Real API calls", "GraphQL", "RESTful design", "Authentication", "Rate limiting", "Web sockets"],
+            "description": "Fetch and process data from web APIs for automation and data pipelines."
+          },
+          {
+            "topic": "C Extensions & Integration",
+            "concepts": ["ctypes", "Cython", "C API", "Performance optimization", "CFFI", "SWIG", "C++ integration", "Rust extensions"],
+            "description": "Extend Python with C code for performance."
+          },
+          {
+            "topic": "Distributed Computing",
+            "concepts": ["Celery", "Ray", "Dask", "Apache Beam", "Redis Queue", "Message brokers", "Microservices", "Container orchestration"],
+            "description": "Scale Python applications across multiple machines."
+          },
+          {
+            "topic": "Data Science & ML Libraries",
+            "concepts": ["pandas", "NumPy", "SciPy", "scikit-learn", "Matplotlib", "Seaborn", "Plotly", "Jupyter", "TensorFlow", "PyTorch", "XGBoost", "LightGBM", "Statsmodels", "OpenCV", "spaCy", "NLTK", "Hugging Face", "Dask", "PySpark", "MLflow", "FastAPI for ML"],
+            "description": "Comprehensive ecosystem for data analysis, visualization, and machine learning."
+          },
+          {
+            "topic": "Testing & Quality Assurance",
+            "concepts": ["pytest", "unittest", "mock", "coverage.py", "tox", "hypothesis", "Property-based testing", "Integration testing", "End-to-end testing"],
+            "description": "Ensure code quality and reliability through comprehensive testing."
+          }
+        ]
+      }
+    },
+    {
+      "title": "Power BI Roadmap",
+      "description": "A modern, comprehensive guide to mastering Power BI within Microsoft Fabric for data visualization, AI-driven insights, and enterprise-scale business intelligence.",
+      "image": "https://img.icons8.com/fluency/96/microsoft.png",
+      "difficulty": "beginner",
+      "tools": ["Power BI Desktop", "Microsoft Fabric Portal", "DAX Studio", "Tabular Editor 3", "Power Query", "Power BI Service (in Fabric)", "Azure (Synapse, ADLS)", "Power Automate", "Power Apps", "ALM Toolkit", "Power BI CLI", "Git"],
+      "levels": {
+        "beginner": [
+          {
+            "topic": "Power BI & Microsoft Fabric Overview",
+            "concepts": ["What is Power BI", "Microsoft Fabric introduction", "Components (Desktop, Service, Mobile)", "Use Cases", "Licensing (Fabric capacities)"],
+            "description": "Understand Power BI's role within Microsoft Fabric and its place in modern business intelligence."
+          },
+          {
+            "topic": "Installing & Setting Up",
+            "concepts": ["Power BI Desktop", "Fabric portal access", "Power BI Service (in Fabric)", "Mobile App"],
+            "description": "Learn how to install Power BI Desktop and navigate the Microsoft Fabric environment."
+          },
+          {
+            "topic": "Connecting to Data",
+            "concepts": ["Excel", "CSV", "SQL Server", "Web", "APIs", "SharePoint", "OneLake (intro)"],
+            "description": "Learn how to import and connect to common data sources, including early exposure to OneLake."
+          },
+          {
+            "topic": "Data Loading & Preview",
+            "concepts": ["Navigator pane", "Selecting tables/sheets", "Query folding", "Data profiling"],
+            "description": "Understand how to load and preview data before modeling."
+          },
+          {
+            "topic": "Power Query Editor Basics",
+            "concepts": ["Remove columns", "Change data types", "Filter rows", "Sort", "Rename", "Basic error handling"],
+            "description": "Use Power Query to shape and clean data for analysis."
+          },
+          {
+            "topic": "Basic Visualizations",
+            "concepts": ["Bar", "Pie", "Line", "Cards", "Tables", "Matrix", "Gauges", "Visual formatting"],
+            "description": "Create common visuals for dashboards and reports using best practices."
+          },
+          {
+            "topic": "Working with Fields",
+            "concepts": ["Drag & drop fields", "Axes", "Values", "Legend", "Tooltips", "Field formatting"],
+            "description": "Understand field well usage and basic visual customization."
+          },
+          {
+            "topic": "Publishing to Power BI Service (Fabric)",
+            "concepts": ["Publish", "Fabric workspaces", "Dashboard creation", "Sharing", "App creation basics"],
+            "description": "Share reports to the cloud-based Power BI service within Microsoft Fabric."
+          }
+        ],
+        "intermediate": [
+          {
+            "topic": "Data Model Design",
+            "concepts": ["Relationships", "Star schema (preferred)", "Active/inactive relationships", "Cross-filter direction"],
+            "description": "Structure your data model for optimal performance and intuitive analysis."
+          },
+          {
+            "topic": "Managing Relationships",
+            "concepts": ["One-to-many", "Many-to-one", "Cardinality", "Bidirectional filtering (cautious use)"],
+            "description": "Create and troubleshoot table relationships effectively."
+          },
+          {
+            "topic": "Introduction to DAX",
+            "concepts": ["Calculated columns vs measures", "DAX syntax", "Row vs filter context", "Best practices"],
+            "description": "Write DAX formulas for custom calculations with proper context understanding."
+          },
+          {
+            "topic": "Common DAX Functions",
+            "concepts": ["SUM()", "COUNTROWS()", "AVERAGE()", "IF()", "SWITCH()", "CALCULATE()"],
+            "description": "Perform aggregations and logic-based operations using foundational DAX."
+          },
+          {
+            "topic": "Time Intelligence in DAX",
+            "concepts": ["TOTALYTD()", "DATEADD()", "SAMEPERIODLASTYEAR()", "DATESBETWEEN()", "Calendar tables"],
+            "description": "Create time-based metrics like YOY, QoQ, and YTD analysis."
+          },
+          {
+            "topic": "Data Transformation (Power Query)",
+            "concepts": ["Merge", "Append", "Group by", "Pivot/Unpivot", "Conditional columns", "Parameter usage"],
+            "description": "Clean, reshape, and consolidate data from multiple sources."
+          },
+          {
+            "topic": "Drillthrough & Tooltips",
+            "concepts": ["Report page tooltips", "Drillthrough pages", "Drillthrough filters", "Sync slicers"],
+            "description": "Add depth and interactivity to visual reports."
+          },
+          {
+            "topic": "Bookmarks & Selection Pane",
+            "concepts": ["Bookmarks", "Toggle views", "Storytelling", "Navigation buttons", "Selection pane control"],
+            "description": "Create dynamic, presentation-ready reports."
+          },
+          {
+            "topic": "Composite Models & Aggregations",
+            "concepts": ["Import + DirectQuery", "Aggregation tables", "Performance trade-offs", "Storage modes"],
+            "description": "Combine real-time and historical data efficiently for large datasets."
+          }
+        ],
+        "advanced": [
+          {
+            "topic": "Advanced DAX Functions",
+            "concepts": ["CALCULATE()", "FILTER()", "ALL() / ALLEXCEPT()", "VALUES()", "RELATED()", "EARLIER()", "Iterator functions (SUMX, etc.)"],
+            "description": "Write powerful, context-sensitive DAX measures for complex business logic."
+          },
+          {
+            "topic": "Row-Level Security (RLS)",
+            "concepts": ["Roles", "DAX filters", "Dynamic RLS with USERNAME()", "Testing RLS in Fabric"],
+            "description": "Secure data access based on user identity or role."
+          },
+          {
+            "topic": "Performance Optimization",
+            "concepts": ["DAX optimization", "Model size reduction", "Performance Analyzer", "VertiPaq engine insights", "Aggregations"],
+            "description": "Improve report responsiveness and reduce resource consumption."
+          },
+          {
+            "topic": "Custom Visuals",
+            "concepts": ["Import from AppSource", "Certified vs uncertified visuals", "Accessibility considerations", "Custom visual development (intro)"],
+            "description": "Enhance reports with third-party or custom visuals responsibly."
+          },
+          {
+            "topic": "Advanced Power Query (M Language)",
+            "concepts": ["Custom functions", "M language basics", "Error handling", "List/Record functions", "Query diagnostics"],
+            "description": "Write reusable and robust data transformation logic in M."
+          },
+          {
+            "topic": "Paginated Reports",
+            "concepts": ["Power BI Report Builder", "Pixel-perfect layouts", "Export to PDF/Excel", "Shared datasets"],
+            "description": "Generate printable, formatted reports for operational use."
+          },
+          {
+            "topic": "Drill Down & Hierarchies",
+            "concepts": ["Creating hierarchies", "Drill up/down", "Expand/collapse", "Date hierarchies"],
+            "description": "Enable intuitive navigation through dimensional data."
+          },
+          {
+            "topic": "Themes & Branding",
+            "concepts": ["JSON themes", "Custom color palettes", "Corporate branding", "Theme inheritance"],
+            "description": "Maintain consistent visual identity across reports."
+          },
+          {
+            "topic": "Deployment Pipelines & ALM",
+            "concepts": ["Dev/Test/Prod stages", "Deployment rules", "Source control with Git", "ALM Toolkit", "Impact analysis"],
+            "description": "Manage the report lifecycle like a software project with version control and staged deployment."
+          }
+        ],
+        "expert": [
+          {
+            "topic": "Microsoft Fabric Deep Dive",
+            "concepts": ["Fabric workspaces", "OneLake architecture", "Semantic models in Fabric", "Capacity monitoring", "Data sharing across domains"],
+            "description": "Operate Power BI at scale within Microsoft Fabric's unified analytics platform."
+          },
+          {
+            "topic": "Copilot in Power BI (Generative AI)",
+            "concepts": ["Natural language report generation", "DAX suggestions", "Narrative insights", "Q&A enhancements", "AI visuals"],
+            "description": "Leverage AI to accelerate report creation, exploration, and insight generation."
+          },
+          {
+            "topic": "Direct Lake Mode",
+            "concepts": ["Delta tables in OneLake", "Semantic models over Direct Lake", "Performance vs Import/DirectQuery", "Schema enforcement"],
+            "description": "Use the next-generation analytics engine for high-speed, large-scale data analysis."
+          },
+          {
+            "topic": "Dataflows Gen2",
+            "concepts": ["Reusable ETL in Fabric", "Power Query Online", "Computed entities", "Linked entities", "Dataflow compute"],
+            "description": "Centralize and reuse data transformations across semantic models using cloud-native dataflows."
+          },
+          {
+            "topic": "Power BI Gateway & On-Prem Integration",
+            "concepts": ["On-premises data gateway", "Scheduled refresh", "Personal vs Enterprise gateway", "Hybrid data scenarios"],
+            "description": "Securely connect cloud-based Power BI to on-premises data sources."
+          },
+          {
+            "topic": "Integration Ecosystem",
+            "concepts": ["Analyze in Excel", "Embedding in Teams/SharePoint", "Power Apps integration", "Export to PowerPoint"],
+            "description": "Collaborate and distribute insights across Microsoft 365 and custom apps."
+          },
+          {
+            "topic": "Power Automate & Power Apps",
+            "concepts": ["Automate alerts", "Report sharing workflows", "Trigger flows from data changes", "Embed reports in Power Apps"],
+            "description": "Add workflow automation and app integration to your analytics solutions."
+          },
+          {
+            "topic": "Power BI REST API & Embedding",
+            "concepts": ["Embed APIs (Gen2)", "Service principals", "Refresh APIs", "Custom dev tools", "Power BI CLI"],
+            "description": "Automate and embed Power BI into custom applications securely at scale."
+          },
+          {
+            "topic": "AI Insights & Advanced Analytics",
+            "concepts": ["Quick Insights", "Decomposition Tree", "Key Influencers", "Anomaly Detection", "Smart narratives"],
+            "description": "Go beyond dashboards with automated, AI-powered data exploration."
+          },
+          {
+            "topic": "Natural Language & Q&A",
+            "concepts": ["Ask a question", "Q&A visual", "Semantic model training", "Synonyms & phrasing"],
+            "description": "Enable business users to query data using natural language."
+          },
+          {
+            "topic": "Power BI Goals & Impact Tracking",
+            "concepts": ["KPI tracking", "Target setting", "Progress visualization", "Business outcome alignment"],
+            "description": "Connect data insights directly to strategic business objectives."
+          }
+        ]
+      }
+    },
+    {
+      "title": "Excel Roadmap",
+      "description": "A structured roadmap to mastering Microsoft Excel for data analysis, automation, visualization, and integration with AI and enterprise solutions.",
+      "image": "https://img.icons8.com/fluency/96/microsoft-excel-2019.png",
+      "difficulty": "beginner",
+      "tools": [
+        "Microsoft Excel (Desktop & Web)",
+        "Power Query",
+        "Power Pivot",
+        "VBA Editor",
+        "Office Scripts",
+        "Solver Add-in",
+        "Analysis ToolPak",
+        "Excel Copilot (AI)",
+        "Power BI (integration)",
+        "SharePoint / OneDrive"
+      ],
+      "levels": {
+        "beginner": [
+          {
+            "topic": "Getting Started with Excel",
+            "concepts": ["Excel interface", "Workbook vs Worksheet", "Cells, Rows, Columns", "Basic navigation", "Saving and opening files"],
+            "description": "Learn the fundamentals of Excel layout, navigation, and file handling."
+          },
+          {
+            "topic": "Basic Data Entry & Formatting",
+            "concepts": ["Entering data", "Cell formatting", "Number formats", "Text formatting", "Borders & fills"],
+            "description": "Understand how to input and format data for readability and consistency."
+          },
+          {
+            "topic": "Basic Formulas",
+            "concepts": ["=SUM()", "=AVERAGE()", "=MIN()", "=MAX()", "Basic arithmetic (+, -, *, /)"],
+            "description": "Perform simple calculations using built-in formulas."
+          },
+          {
+            "topic": "Working with Tables",
+            "concepts": ["Insert table", "Sorting", "Filtering", "Table styles", "Structured references"],
+            "description": "Organize data into tables for easier analysis and formatting."
+          },
+          {
+            "topic": "Charts & Basic Visualization",
+            "concepts": ["Column chart", "Line chart", "Pie chart", "Formatting charts", "Quick analysis"],
+            "description": "Visualize your data with simple, easy-to-read charts."
+          },
+          {
+            "topic": "Printing & Page Layout",
+            "concepts": ["Page setup", "Headers & footers", "Print area", "Fit to page", "PDF export"],
+            "description": "Prepare Excel sheets for professional printing and sharing."
+          }
+        ],
+        "intermediate": [
+          {
+            "topic": "Intermediate Formulas",
+            "concepts": ["IF()", "Nested IF", "COUNTIF()", "SUMIF()", "TEXT()", "DATE()"],
+            "description": "Use conditional and logical functions to perform dynamic calculations."
+          },
+          {
+            "topic": "Data Cleaning",
+            "concepts": ["Remove duplicates", "TRIM()", "CLEAN()", "Text to columns", "Find & Replace"],
+            "description": "Prepare raw data for accurate analysis by cleaning inconsistencies."
+          },
+          {
+            "topic": "Conditional Formatting",
+            "concepts": ["Highlight cells rules", "Data bars", "Color scales", "Custom formulas"],
+            "description": "Apply visual cues to data for quick insights."
+          },
+          {
+            "topic": "PivotTables & PivotCharts",
+            "concepts": ["Creating PivotTables", "Row/Column fields", "Values and filters", "PivotCharts"],
+            "description": "Summarize and analyze data dynamically using PivotTables."
+          },
+          {
+            "topic": "Data Validation",
+            "concepts": ["Dropdown lists", "Input messages", "Error alerts", "Custom validation rules"],
+            "description": "Control user input and maintain data integrity."
+          },
+          {
+            "topic": "Lookup Functions",
+            "concepts": ["VLOOKUP()", "HLOOKUP()", "INDEX()", "MATCH()", "XLOOKUP()"],
+            "description": "Search and retrieve values across tables efficiently."
+          },
+          {
+            "topic": "Working with Multiple Sheets",
+            "concepts": ["3D formulas", "Linking sheets", "Named ranges", "Sheet protection"],
+            "description": "Reference and organize data across multiple worksheets."
+          }
+        ],
+        "advanced": [
+          {
+            "topic": "Advanced Functions",
+            "concepts": ["IFS()", "SWITCH()", "FILTER()", "UNIQUE()", "SORT()", "SEQUENCE()"],
+            "description": "Use modern Excel dynamic array functions for advanced data manipulation."
+          },
+          {
+            "topic": "Power Query (Get & Transform)",
+            "concepts": ["Import data", "Merge queries", "Append queries", "Transform columns", "Parameters"],
+            "description": "Automate and clean large datasets with Power Query."
+          },
+          {
+            "topic": "Advanced PivotTables",
+            "concepts": ["Calculated fields", "Grouping", "Slicers", "Timelines", "Show values as"],
+            "description": "Enhance PivotTables for deeper insights and interactivity."
+          },
+          {
+            "topic": "What-If Analysis",
+            "concepts": ["Goal Seek", "Scenario Manager", "Data Tables"],
+            "description": "Run simulations to analyze different business scenarios."
+          },
+          {
+            "topic": "Macros & VBA (Introduction)",
+            "concepts": ["Record a macro", "Assign to button", "Intro to VBA editor", "Simple automation"],
+            "description": "Start automating repetitive tasks using macros and VBA."
+          },
+          {
+            "topic": "Data Visualization Best Practices",
+            "concepts": ["Combo charts", "Sparklines", "Custom formatting", "Dashboard layout"],
+            "description": "Design professional dashboards with effective visuals."
+          }
+        ],
+        "expert": [
+          {
+            "topic": "Power Pivot & Data Modeling",
+            "concepts": ["Data model relationships", "DAX in Excel", "Calculated columns", "Measures"],
+            "description": "Model complex datasets and perform advanced analytics within Excel."
+          },
+          {
+            "topic": "Advanced VBA Automation",
+            "concepts": ["Custom VBA functions", "UserForms", "Error handling", "Loops & conditions"],
+            "description": "Build full-scale Excel automation with VBA programming."
+          },
+          {
+            "topic": "Integration with Power BI & Microsoft 365",
+            "concepts": ["Analyze in Excel (Power BI)", "SharePoint integration", "Teams integration", "OneDrive auto-sync"],
+            "description": "Connect Excel seamlessly with Power BI and Microsoft 365 ecosystem."
+          },
+          {
+            "topic": "Excel with AI (Copilot)",
+            "concepts": ["Natural language queries", "AI formula suggestions", "Automated insights", "Smart data cleaning"],
+            "description": "Leverage Microsoft Copilot to accelerate Excel productivity with AI."
+          },
+          {
+            "topic": "External Data Connections",
+            "concepts": ["SQL Server", "Azure SQL", "APIs", "ODBC connections", "Refresh schedules"],
+            "description": "Connect Excel to enterprise databases and cloud sources."
+          },
+          {
+            "topic": "Collaboration & Security",
+            "concepts": ["Shared workbooks", "Version history", "Sheet protection", "IRM policies"],
+            "description": "Secure and collaborate on workbooks in enterprise environments."
+          },
+          {
+            "topic": "Excel for Financial Modeling",
+            "concepts": ["NPV()", "IRR()", "Sensitivity analysis", "Monte Carlo simulation"],
+            "description": "Build financial and investment models with advanced Excel techniques."
+          },
+          {
+            "topic": "Excel for Data Science",
+            "concepts": ["Statistical functions", "Regression analysis", "Forecasting", "Solver add-in"],
+            "description": "Use Excel for predictive modeling and data analysis."
+          }
+        ]
+      }
+    },
+    {
+      "title": "Linux Roadmap",
+      "description": "Master Linux command line, system administration, automation, and cloud-native workflows for DevOps, data engineering, and cybersecurity.",
+      "image": "https://cdn.simpleicons.org/linux/0AF",
+      "difficulty": "intermediate",
+      "tools": [
+        "Ubuntu",
+        "Debian",
+        "CentOS / RHEL",
+        "AlmaLinux",
+        "Fedora",
+        "Zsh / Bash",
+        "VS Code",
+        "Docker",
+        "Podman",
+        "Ansible",
+        "Terraform",
+        "KVM"
+      ],
+      "levels": {
+        "beginner": [
+          {
+            "topic": "Linux Basics & File System",
+            "concepts": ["pwd", "ls", "cd", "mkdir", "touch", "tree", "clear"],
+            "description": "Navigate and manage directories and files in Linux."
+          },
+          {
+            "topic": "File Operations",
+            "concepts": ["cp", "mv", "rm", "cat", "less", "head", "tail", "nano", "vim (intro)"],
+            "description": "View, copy, move, and edit files."
+          },
+          {
+            "topic": "Permissions & Ownership",
+            "concepts": ["chmod", "chown", "groups", "umask", "rwx basics", "sticky bit"],
+            "description": "Control file and directory access with Linux permissions."
+          },
+          {
+            "topic": "Processes & Jobs",
+            "concepts": ["ps", "top", "htop", "kill", "jobs", "bg", "fg", "nice"],
+            "description": "Monitor and manage running processes."
+          },
+          {
+            "topic": "Networking Basics",
+            "concepts": ["ping", "curl", "wget", "ifconfig/ip", "ss/netstat", "ssh"],
+            "description": "Test connections, fetch data, and connect to remote servers."
+          }
+        ],
+        "intermediate": [
+          {
+            "topic": "Text Processing",
+            "concepts": ["grep", "awk", "sed", "cut", "sort", "uniq", "wc", "tr"],
+            "description": "Manipulate and extract text from files and streams."
+          },
+          {
+            "topic": "Pipes & Redirection",
+            "concepts": ["|", ">", ">>", "<", "2>", "&>", "tee", "xargs"],
+            "description": "Combine commands and control input/output streams."
+          },
+          {
+            "topic": "Package Management",
+            "concepts": ["apt", "yum", "dnf", "snap", "flatpak", "repositories"],
+            "description": "Install and manage software on different Linux distributions."
+          },
+          {
+            "topic": "User & Group Management",
+            "concepts": ["useradd", "passwd", "usermod", "groupadd", "sudo", "visudo"],
+            "description": "Create and manage users, groups, and sudo privileges."
+          },
+          {
+            "topic": "Shell Scripting",
+            "concepts": ["Variables", "Loops", "Conditionals", "Functions", "Command substitution"],
+            "description": "Write shell scripts to automate tasks."
+          },
+          {
+            "topic": "System Monitoring",
+            "concepts": ["vmstat", "iostat", "free", "dmesg", "journalctl", "uptime"],
+            "description": "Track performance metrics and analyze system logs."
+          }
+        ],
+        "advanced": [
+          {
+            "topic": "Task Automation",
+            "concepts": ["crontab", "at", "anacron", "systemd timers"],
+            "description": "Schedule one-time or recurring jobs."
+          },
+          {
+            "topic": "Advanced Networking",
+            "concepts": ["scp", "rsync", "nmap", "netcat", "tcpdump", "sshd_config"],
+            "description": "Transfer files, scan networks, and troubleshoot connections."
+          },
+          {
+            "topic": "Storage & File Systems",
+            "concepts": ["mount", "umount", "df", "du", "LVM", "RAID", "ext4", "xfs", "btrfs"],
+            "description": "Manage storage, partitions, and file systems."
+          },
+          {
+            "topic": "Security Essentials",
+            "concepts": ["ufw", "firewalld", "fail2ban", "SELinux basics", "audit logs"],
+            "description": "Protect Linux systems with firewalls and security tools."
+          },
+          {
+            "topic": "Kernel & Boot Process",
+            "concepts": ["/proc", "Kernel modules", "sysctl", "grub", "init/systemd"],
+            "description": "Understand kernel operations and the Linux boot process."
+          }
+        ],
+        "expert": [
+          {
+            "topic": "Advanced Security & Hardening",
+            "concepts": ["SELinux policies", "AppArmor", "Auditd", "IDS/IPS (Snort, Suricata)"],
+            "description": "Implement enterprise-grade Linux security practices."
+          },
+          {
+            "topic": "Containers & Virtualization",
+            "concepts": ["Docker", "Podman", "containerd", "KVM", "QEMU", "libvirt"],
+            "description": "Run isolated workloads in containers or virtual machines."
+          },
+          {
+            "topic": "System Performance Tuning",
+            "concepts": ["ulimit", "cgroups", "sysctl tuning", "I/O scheduler", "network tuning"],
+            "description": "Optimize system performance for workloads."
+          },
+          {
+            "topic": "Cluster & HA Management",
+            "concepts": ["Pacemaker", "Corosync", "DRBD", "GlusterFS", "Ceph"],
+            "description": "Set up Linux clusters for high availability and scalability."
+          },
+          {
+            "topic": "Infrastructure as Code",
+            "concepts": ["Ansible", "Terraform", "Configuration management", "CI/CD integration"],
+            "description": "Automate infrastructure deployment and management with code."
+          }
+        ]
+      }
+    },
+    {
+      "title": "Git Roadmap",
+      "description": "Master Git for version control, collaboration, automation, and enterprise workflows with GitHub, GitLab, and DevOps pipelines.",
+      "image": "https://cdn.simpleicons.org/git/0AF",
+      "difficulty": "beginner",
+      "tools": [
+        "GitHub",
+        "GitLab",
+        "Bitbucket",
+        "Azure Repos",
+        "VS Code",
+        "Git Bash",
+        "SourceTree",
+        "GitHub Desktop",
+        "CLI (Terminal)",
+        "CI/CD tools (Jenkins, GitHub Actions, GitLab CI)"
+      ],
+      "levels": {
+        "beginner": [
+          {
+            "topic": "Git Basics",
+            "concepts": ["git init", "git clone", "git status", "git log", "git diff"],
+            "description": "Initialize and inspect repositories."
+          },
+          {
+            "topic": "Staging & Committing",
+            "concepts": ["git add", "git commit", "Commit messages", "git commit --amend"],
+            "description": "Track and commit changes into history."
+          },
+          {
+            "topic": "Branching",
+            "concepts": ["git branch", "git switch", "git checkout", "HEAD", "Detached HEAD"],
+            "description": "Isolate and manage work using branches."
+          },
+          {
+            "topic": "Merging",
+            "concepts": ["git merge", "fast-forward", "merge conflicts", "merge strategies"],
+            "description": "Integrate changes from multiple branches."
+          }
+        ],
+        "intermediate": [
+          {
+            "topic": "Remote Repositories",
+            "concepts": ["git remote", "git push", "git pull", "git fetch", "origin/upstream"],
+            "description": "Collaborate with remotes like GitHub, GitLab, Bitbucket."
+          },
+          {
+            "topic": "Stashing",
+            "concepts": ["git stash", "stash apply", "stash pop", "stash drop"],
+            "description": "Temporarily save uncommitted changes."
+          },
+          {
+            "topic": "Rebasing",
+            "concepts": ["git rebase", "interactive rebase", "squash commits", "reword"],
+            "description": "Rewrite commit history for clean workflows."
+          },
+          {
+            "topic": "Undoing Changes",
+            "concepts": ["git reset", "git revert", "git restore", "git reflog"],
+            "description": "Undo mistakes and recover lost commits."
+          },
+          {
+            "topic": "Gitignore",
+            "concepts": [".gitignore file", "Patterns", "Global gitignore", "Excluding files"],
+            "description": "Ignore unnecessary files from version control."
+          }
+        ],
+        "advanced": [
+          {
+            "topic": "Tags & Releases",
+            "concepts": ["git tag", "Lightweight vs annotated", "Signed tags"],
+            "description": "Mark commits as versions or releases."
+          },
+          {
+            "topic": "Submodules",
+            "concepts": ["git submodule add", "update", "sync", "nested submodules"],
+            "description": "Manage repositories inside repositories."
+          },
+          {
+            "topic": "Hooks & Automation",
+            "concepts": ["pre-commit", "pre-push", "server-side hooks", "Custom scripts"],
+            "description": "Automate workflows using Git hooks."
+          },
+          {
+            "topic": "Reflog & Recovery",
+            "concepts": ["git reflog", "HEAD@{n}", "Recover lost commits"],
+            "description": "Track references and recover from mistakes."
+          },
+          {
+            "topic": "Team Workflows",
+            "concepts": ["Git Flow", "GitHub Flow", "Trunk-based development", "Forking model"],
+            "description": "Adopt workflows for collaboration in teams."
+          }
+        ],
+        "expert": [
+          {
+            "topic": "Advanced Rebasing",
+            "concepts": ["git rebase -i", "autosquash", "exec scripts", "Preserve merges"],
+            "description": "Master rebasing for complex workflows."
+          },
+          {
+            "topic": "Patch Management",
+            "concepts": ["git format-patch", "git am", "Email workflows"],
+            "description": "Share and apply patches between repos."
+          },
+          {
+            "topic": "Subtree Merging",
+            "concepts": ["git subtree add", "split", "merge"],
+            "description": "Manage external repos with subtree merging."
+          },
+          {
+            "topic": "Git Internals",
+            "concepts": ["Object model", "Blobs", "Trees", "Commits", "Refs", "Plumbing commands"],
+            "description": "Understand how Git stores data internally."
+          },
+          {
+            "topic": "Scaling & Performance",
+            "concepts": ["git gc", "git repack", "Shallow clones", "Large repo optimization"],
+            "description": "Optimize Git for large-scale projects."
+          }
+        ]
+      }
+    },
+    {
+      "title": "Apache Spark Roadmap",
+      "description": "Master Apache Spark for distributed data processing, analytics, and machine learning at scale with Python (PySpark), Scala, or SQL.",
+      "image": "https://cdn.simpleicons.org/apache/0AF",
+      "difficulty": "advanced",
+      "tools": ["PySpark", "Scala", "Databricks", "Spark UI", "Delta Lake", "Kafka", "Hadoop HDFS", "Kubernetes", "Zeppelin", "Airflow"],
+      "levels": {
+        "beginner": [
+          {
+            "topic": "Introduction to Spark",
+            "concepts": ["What is Spark?", "Why Spark over Hadoop?", "Spark Ecosystem", "Real-world Use Cases"],
+            "description": "Understand Spark's purpose, advantages, and ecosystem components."
+          },
+          {
+            "topic": "Core Concepts & RDDs",
+            "concepts": ["RDD Basics", "Transformations vs Actions", "Lazy Evaluation", "Fault Tolerance"],
+            "description": "Learn the foundation of Spark's distributed data structures."
+          },
+          {
+            "topic": "DataFrames & Spark SQL",
+            "concepts": ["DataFrames", "Spark SQL Queries", "Schema Inference", "Catalyst Optimizer"],
+            "description": "Work with structured data using DataFrame and SQL APIs."
+          },
+          {
+            "topic": "Environment Setup",
+            "concepts": ["PySpark Installation", "Jupyter + Spark", "Spark Standalone Mode"],
+            "description": "Set up Spark locally for practice and experimentation."
+          }
+        ],
+        "intermediate": [
+          {
+            "topic": "DataFrame API & Operations",
+            "concepts": ["Filtering", "Aggregations", "Joins", "Window Functions", "UDFs"],
+            "description": "Perform complex operations with the DataFrame API."
+          },
+          {
+            "topic": "Performance & Optimization",
+            "concepts": ["Caching & Persistence", "Partitioning", "Broadcast Joins", "Adaptive Query Execution"],
+            "description": "Speed up Spark jobs using optimization techniques."
+          },
+          {
+            "topic": "File Formats & Storage",
+            "concepts": ["Parquet", "ORC", "Avro", "JSON", "CSV"],
+            "description": "Work efficiently with different big data file formats."
+          },
+          {
+            "topic": "Pandas & Spark Integration",
+            "concepts": ["Pandas UDFs", "PySpark Pandas API", "Arrow Optimization"],
+            "description": "Leverage Spark with Python libraries seamlessly."
+          }
+        ],
+        "advanced": [
+          {
+            "topic": "Streaming Data",
+            "concepts": ["Structured Streaming", "Event-time Processing", "Watermarking", "Triggers"],
+            "description": "Process and analyze real-time streaming data with Spark."
+          },
+          {
+            "topic": "Machine Learning (MLlib)",
+            "concepts": ["Regression", "Classification", "Clustering", "Recommendation Systems"],
+            "description": "Build scalable ML models using Spark's MLlib library."
+          },
+          {
+            "topic": "Cluster Deployment",
+            "concepts": ["Standalone", "YARN", "Kubernetes", "Mesos"],
+            "description": "Run Spark jobs on different cluster managers."
+          },
+          {
+            "topic": "Performance Tuning",
+            "concepts": ["Shuffle Optimization", "Memory Tuning", "Skew Handling", "Parallelism"],
+            "description": "Fine-tune Spark applications for efficiency."
+          }
+        ],
+        "expert": [
+          {
+            "topic": "Advanced Data Sources",
+            "concepts": ["Kafka Integration", "Delta Lake", "Apache Iceberg", "Apache Hudi"],
+            "description": "Handle advanced data sources and transactional storage."
+          },
+          {
+            "topic": "Monitoring & Debugging",
+            "concepts": ["Spark UI", "Logging", "Metrics", "Event Logs"],
+            "description": "Debug and monitor Spark applications in production."
+          },
+          {
+            "topic": "Security",
+            "concepts": ["Authentication", "Encryption", "ACLs", "Kerberos Integration"],
+            "description": "Secure Spark applications and clusters."
+          },
+          {
+            "topic": "Graph Processing (GraphX & GraphFrames",
+            "concepts": ["Graph Algorithms", "PageRank", "Pregel API"],
+            "description": "Perform large-scale graph analysis using Spark."
+          },
+          {
+            "topic": "Spark Internals",
+            "concepts": ["DAG Scheduler", "Task Scheduler", "Shuffle Service", "Catalyst & Tungsten"],
+            "description": "Understand Spark's low-level execution engine."
+          }
+        ]
+      }
+    },
+    {
+      "title": "DSA Roadmap for Data Science",
+      "description": "Learn data structures, algorithms, and math foundations to design efficient, scalable, and optimized solutions for data science and AI.",
+      "image": "https://cdn.simpleicons.org/thealgorithms/000000",
+      "difficulty": "advanced",
+      "tools": ["Python", "NumPy", "Pandas", "SciPy", "scikit-learn", "TensorFlow", "PyTorch", "Jupyter Notebook"],
+      "levels": {
+        "beginner": [
+          {
+            "topic": "Algorithm Foundations",
+            "concepts": ["What is an Algorithm?", "Time Complexity", "Space Complexity", "Big-O Notation"],
+            "description": "Grasp the basics of algorithm analysis."
+          },
+          {
+            "topic": "Basic Data Structures",
+            "concepts": ["Arrays", "Linked Lists", "Stacks", "Queues"],
+            "description": "Store and manage data efficiently."
+          },
+          {
+            "topic": "Sorting & Searching",
+            "concepts": ["Bubble Sort", "Insertion Sort", "Selection Sort", "Binary Search"],
+            "description": "Implement and understand basic algorithms."
+          },
+          {
+            "topic": "Math Foundations",
+            "concepts": ["Sets", "Probability Basics", "Statistics Essentials"],
+            "description": "Build core mathematical intuition for data science."
+          }
+        ],
+        "intermediate": [
+          {
+            "topic": "Advanced Data Structures",
+            "concepts": ["Hash Maps", "Heaps", "Trees (Binary, BST)", "Graphs"],
+            "description": "Learn efficient storage and traversal techniques."
+          },
+          {
+            "topic": "Dynamic Programming & Greedy",
+            "concepts": ["Memoization", "Tabulation", "Knapsack", "Activity Selection"],
+            "description": "Solve optimization problems efficiently."
+          },
+          {
+            "topic": "Graph Algorithms",
+            "concepts": ["DFS", "BFS", "Dijkstra", "Bellman-Ford", "Topological Sort"],
+            "description": "Understand graph traversal and shortest paths."
+          },
+          {
+            "topic": "String Algorithms",
+            "concepts": ["Pattern Matching", "KMP Algorithm", "Rabin-Karp", "Regex"],
+            "description": "Process and analyze string data efficiently."
+          }
+        ],
+        "advanced": [
+          {
+            "topic": "Mathematics for Data Science",
+            "concepts": ["Linear Algebra", "Probability Distributions", "Optimization", "Numerical Methods"],
+            "description": "Master math foundations behind ML/AI."
+          },
+          {
+            "topic": "Core Machine Learning Algorithms",
+            "concepts": ["Regression", "Classification", "Clustering", "Dimensionality Reduction"],
+            "description": "Implement machine learning with strong algorithmic understanding."
+          },
+          {
+            "topic": "Computational Geometry",
+            "concepts": ["Convex Hull", "Nearest Neighbors", "KD-Trees", "Spatial Partitioning"],
+            "description": "Work on spatial and geometric data problems."
+          },
+          {
+            "topic": "Backtracking & Divide and Conquer",
+            "concepts": ["N-Queens", "Subset Sum", "Merge Sort", "Quick Sort"],
+            "description": "Solve recursive problems with advanced strategies."
+          }
+        ],
+        "expert": [
+          {
+            "topic": "Advanced Graph Theory",
+            "concepts": ["Network Flow", "Minimum Spanning Trees", "Graph Coloring"],
+            "description": "Tackle advanced graph optimization problems."
+          },
+          {
+            "topic": "Algorithm Design Patterns",
+            "concepts": ["Sliding Window", "Two Pointers", "Bit Manipulation", "Meet-in-the-Middle"],
+            "description": "Recognize and apply reusable problem-solving patterns."
+          },
+          {
+            "topic": "Big Data & Scalable Algorithms",
+            "concepts": ["MapReduce", "Parallel Algorithms", "Approximation Algorithms"],
+            "description": "Design algorithms for massive datasets."
+          },
+          {
+            "topic": "Deep Learning & AI Foundations",
+            "concepts": ["Neural Networks", "Backpropagation", "Activation Functions", "Optimization Algorithms"],
+            "description": "Understand the DSA side of deep learning."
+          }
+        ]
+      }
+    },
+    {
+      "title": "Apache Kafka Roadmap",
+      "description": "Master Apache Kafka for real-time data streaming, messaging, and building event-driven architectures at scale.",
+      "image": "https://cdn.simpleicons.org/apachekafka/0AF",
+      "difficulty": "advanced",
+      "tools": ["Apache Kafka", "Confluent Platform", "Kafka Connect", "ksqlDB", "Schema Registry", "Prometheus", "Grafana", "Docker", "Kubernetes", "Debezium"],
+      "levels": {
+        "beginner": [
+          {
+            "topic": "Introduction",
+            "concepts": ["What is Kafka?", "Publish-Subscribe Model", "Use Cases (Data Pipelines, Event Sourcing, Microservices)", "Event-Driven Architecture"],
+            "description": "Understand Kafka's role in data streaming and real-time applications."
+          },
+          {
+            "topic": "Core Concepts",
+            "concepts": ["Topics", "Producers", "Consumers", "Brokers", "Partitions", "Offsets"],
+            "description": "Learn the fundamental building blocks of Kafka."
+          },
+          {
+            "topic": "Setup & Installation",
+            "concepts": ["Local Install", "ZooKeeper vs KRaft", "Running with Docker", "Basic Configuration"],
+            "description": "Set up Kafka locally for development and testing."
+          },
+          {
+            "topic": "CLI Basics",
+            "concepts": ["kafka-topics.sh", "kafka-console-producer", "kafka-console-consumer", "kafka-configs.sh"],
+            "description": "Use Kafka CLI to manage topics and messages."
+          }
+        ],
+        "intermediate": [
+          {
+            "topic": "Producers & Consumers",
+            "concepts": ["Serialization (Avro/Protobuf/JSON)", "Acknowledgments", "Idempotent Producers", "Consumer Groups", "Offset Management"],
+            "description": "Build reliable, fault-tolerant Kafka producers and consumers."
+          },
+          {
+            "topic": "Partitions & Replication",
+            "concepts": ["Partitioning Strategies", "Replication Factor", "In-Sync Replicas (ISR)", "Fault Tolerance"],
+            "description": "Enable scalability and reliability with partitions and replication."
+          },
+          {
+            "topic": "Consumer Groups",
+            "concepts": ["Rebalancing", "Sticky Assignors", "Parallel Consumption"],
+            "description": "Distribute workload across multiple consumers."
+          },
+          {
+            "topic": "Error Handling",
+            "concepts": ["Retries", "Dead Letter Queues (DLQ)", "Poison Pill Messages", "Error Strategies"],
+            "description": "Handle message delivery and processing errors effectively."
+          }
+        ],
+        "advanced": [
+          {
+            "topic": "Kafka Streams",
+            "concepts": ["KStream vs KTable", "Stateful Processing", "Windowing", "Joins"],
+            "description": "Process data in real time with the Kafka Streams API."
+          },
+          {
+            "topic": "ksqlDB",
+            "concepts": ["Streaming SQL", "Push vs Pull Queries", "Event Streaming Analytics"],
+            "description": "Perform real-time queries with SQL over Kafka."
+          },
+          {
+            "topic": "Connectors",
+            "concepts": ["Kafka Connect", "Source & Sink Connectors", "Debezium CDC", "JDBC Connector", "Cloud Integrations"],
+            "description": "Integrate Kafka with databases and external systems."
+          },
+          {
+            "topic": "Schema Registry",
+            "concepts": ["Avro", "Protobuf", "JSON Schema", "Schema Evolution", "Compatibility Modes"],
+            "description": "Maintain compatibility and governance for data schemas."
+          }
+        ],
+        "expert": [
+          {
+            "topic": "Security",
+            "concepts": ["SSL/TLS", "SASL", "mTLS", "Access Control Lists (ACLs)"],
+            "description": "Secure Kafka clusters for enterprise use."
+          },
+          {
+            "topic": "Monitoring & Observability",
+            "concepts": ["Prometheus", "Grafana Dashboards", "JMX Metrics", "Burrow for Consumer Lag"],
+            "description": "Monitor and ensure health of Kafka clusters."
+          },
+          {
+            "topic": "Scaling & Performance Tuning",
+            "concepts": ["Broker Tuning", "Compression (Snappy, LZ4)", "Disk I/O Optimization", "Threading Models"],
+            "description": "Tune Kafka for high throughput and low latency."
+          },
+          {
+            "topic": "Multi-Datacenter Deployments",
+            "concepts": ["MirrorMaker 2", "Cluster Linking", "Active-Active vs Active-Passive"],
+            "description": "Set up Kafka across data centers and regions."
+          },
+          {
+            "topic": "Kafka Internals",
+            "concepts": ["Log Storage", "Controller Node", "Request Handling", "Protocol Design"],
+            "description": "Understand the architecture behind Kafka."
+          }
+        ]
+      }
+    },
+    {
+      "title": "Apache Airflow Roadmap",
+      "description": "Master Apache Airflow for workflow automation, scheduling, and orchestration of complex data pipelines.",
+      "image": "https://cdn.simpleicons.org/apacheairflow/0AF",
+      "difficulty": "advanced",
+      "tools": ["Apache Airflow", "Astronomer", "Docker", "Kubernetes", "PostgreSQL", "Redis", "GitHub Actions", "Grafana", "Prometheus", "Elasticsearch"],
+      "levels": {
+        "beginner": [
+          {
+            "topic": "Introduction",
+            "concepts": ["What is Airflow?", "DAGs", "UI Overview", "Use Cases in ETL & Data Engineering"],
+            "description": "Understand Airflow's role in orchestrating data pipelines."
+          },
+          {
+            "topic": "Setup & Installation",
+            "concepts": ["Local Install", "Docker Compose", "Astronomer", "Managed Services (MWAA/GCP Composer)"],
+            "description": "Run Airflow locally and in the cloud."
+          },
+          {
+            "topic": "Writing DAGs",
+            "concepts": ["Python DAGs", "Operators", "Dependencies", "Scheduling"],
+            "description": "Create workflows in Python code."
+          },
+          {
+            "topic": "Basic Operators",
+            "concepts": ["BashOperator", "PythonOperator", "EmailOperator"],
+            "description": "Execute simple tasks using built-in operators."
+          }
+        ],
+        "intermediate": [
+          {
+            "topic": "Task Dependencies",
+            "concepts": ["Upstream & Downstream", "Bitshift Operators", "set_downstream / set_upstream"],
+            "description": "Control workflow execution order."
+          },
+          {
+            "topic": "Scheduling",
+            "concepts": ["Cron Expressions", "Timetables", "Catchup", "Backfill"],
+            "description": "Schedule workflows with precision."
+          },
+          {
+            "topic": "XComs",
+            "concepts": ["Push/Pull Data", "Cross-Task Communication", "XCom Backends"],
+            "description": "Enable task-to-task data exchange."
+          },
+          {
+            "topic": "Hooks & Connections",
+            "concepts": ["Databases", "APIs", "Cloud Services", "Custom Hooks"],
+            "description": "Integrate Airflow with external systems."
+          }
+        ],
+        "advanced": [
+          {
+            "topic": "Dynamic DAGs",
+            "concepts": ["Loop-Generated Tasks", "Templates", "Parametrized DAGs"],
+            "description": "Automate DAG creation dynamically."
+          },
+          {
+            "topic": "Error Handling & Resilience",
+            "concepts": ["Retries", "Triggers", "Alerts", "Sensors"],
+            "description": "Make workflows robust and fault-tolerant."
+          },
+          {
+            "topic": "SubDAGs & TaskGroups",
+            "concepts": ["TaskGroups", "Nested DAGs", "Modular Pipelines"],
+            "description": "Organize complex DAGs."
+          },
+          {
+            "topic": "Plugins & Extensibility",
+            "concepts": ["Custom Operators", "Custom Sensors", "Macros", "UI Plugins"],
+            "description": "Extend Airflow's capabilities."
+          }
+        ],
+        "expert": [
+          {
+            "topic": "Deployment at Scale",
+            "concepts": ["CeleryExecutor", "KubernetesExecutor", "High Availability Setup", "Scaling Workers"],
+            "description": "Run Airflow in production-grade environments."
+          },
+          {
+            "topic": "Monitoring & Observability",
+            "concepts": ["Logging", "Metrics", "Prometheus Integration", "Alerting"],
+            "description": "Monitor pipeline execution health."
+          },
+          {
+            "topic": "CI/CD for DAGs",
+            "concepts": ["Testing DAGs", "Version Control", "GitHub Actions", "Automated Deployment"],
+            "description": "Treat DAGs as production code."
+          },
+          {
+            "topic": "Security",
+            "concepts": ["RBAC", "OAuth2", "LDAP", "Secrets Backends"],
+            "description": "Secure Airflow environments and credentials."
+          },
+          {
+            "topic": "Airflow Internals",
+            "concepts": ["Scheduler", "Executor", "Metadata Database", "Task Lifecycle"],
+            "description": "Deep dive into Airflow's architecture."
+          }
+        ]
+      }
+    },
+    {
+      "title": "Elasticsearch Roadmap",
+      "description": "Master Elasticsearch for full-text search, log analytics, and real-time data exploration with the Elastic Stack.",
+      "image": "https://cdn.simpleicons.org/elasticsearch/0AF",
+      "difficulty": "advanced",
+      "tools": ["Elasticsearch", "Kibana", "Logstash", "Filebeat", "Metricbeat", "Cerebro", "Docker", "Kubernetes", "Prometheus", "Grafana"],
+      "levels": {
+        "beginner": [
+          {
+            "topic": "Introduction",
+            "concepts": ["What is Elasticsearch?", "Use Cases", "ELK/Elastic Stack", "Inverted Index"],
+            "description": "Understand Elasticsearch's role as a search and analytics engine."
+          },
+          {
+            "topic": "Core Concepts",
+            "concepts": ["Index", "Document", "Shards", "Replicas", "Cluster Architecture"],
+            "description": "Learn how Elasticsearch organizes and stores data."
+          },
+          {
+            "topic": "CRUD Operations",
+            "concepts": ["Indexing", "Searching", "Updating", "Deleting", "Bulk API"],
+            "description": "Perform basic document operations."
+          },
+          {
+            "topic": "REST API",
+            "concepts": ["GET", "POST", "PUT", "DELETE", "HTTP Clients"],
+            "description": "Interact with Elasticsearch using REST APIs."
+          }
+        ],
+        "intermediate": [
+          {
+            "topic": "Query DSL",
+            "concepts": ["Match Queries", "Term Queries", "Bool Queries", "Range Queries", "Fuzzy Search"],
+            "description": "Build powerful search queries with DSL."
+          },
+          {
+            "topic": "Aggregations",
+            "concepts": ["Metric Aggregations", "Bucket Aggregations", "Pipeline Aggregations", "Composite Aggregations"],
+            "description": "Analyze and summarize data with aggregations."
+          },
+          {
+            "topic": "Mapping & Data Types",
+            "concepts": ["Keyword vs Text", "Numeric Types", "Geo Data", "Nested Fields"],
+            "description": "Define schemas for efficient indexing."
+          },
+          {
+            "topic": "Kibana Basics",
+            "concepts": ["Dashboards", "Discover", "Visualizations", "Dev Tools"],
+            "description": "Explore Elasticsearch data with Kibana."
+          }
+        ],
+        "advanced": [
+          {
+            "topic": "Performance Tuning",
+            "concepts": ["Indexing Speed", "Search Optimization", "Refresh Interval", "Circuit Breakers"],
+            "description": "Optimize Elasticsearch for scale."
+          },
+          {
+            "topic": "Index Lifecycle Management (ILM)",
+            "concepts": ["Hot-Warm-Cold Architecture", "Rollover", "Shrink", "Delete"],
+            "description": "Manage large datasets efficiently."
+          },
+          {
+            "topic": "Security",
+            "concepts": ["TLS", "Role-Based Access Control", "Field-Level Security", "Document-Level Security"],
+            "description": "Secure Elasticsearch clusters."
+          },
+          {
+            "topic": "Scaling",
+            "concepts": ["Clustering", "Shard Allocation", "Cross-Cluster Search", "Node Roles"],
+            "description": "Scale Elasticsearch across multiple nodes."
+          }
+        ],
+        "expert": [
+          {
+            "topic": "Logstash & Beats",
+            "concepts": ["Filebeat", "Metricbeat", "Log Pipelines", "Ingest Nodes"],
+            "description": "Ingest data into Elasticsearch pipelines."
+          },
+          {
+            "topic": "Monitoring & Alerting",
+            "concepts": ["Elastic Monitoring", "Watcher", "Prometheus Integration"],
+            "description": "Monitor Elasticsearch clusters."
+          },
+          {
+            "topic": "Advanced Analytics",
+            "concepts": ["Anomaly Detection", "Forecasting", "Machine Learning in Kibana"],
+            "description": "Enable ML-powered analytics."
+          },
+          {
+            "topic": "Search Relevance",
+            "concepts": ["BM25", "Boosting", "Synonyms", "Analyzers"],
+            "description": "Improve search relevance and ranking."
+          },
+          {
+            "topic": "Elasticsearch Internals",
+            "concepts": ["Lucene", "Segments & Merging", "Translog", "Cluster Coordination"],
+            "description": "Understand low-level Elasticsearch internals."
+          }
+        ]
+      }
+    },
+    {
+      "title": "Kibana Roadmap",
+      "description": "Learn Kibana for search, analytics, visualization, monitoring, and ML integration with Elasticsearch data.",
+      "image": "https://cdn.simpleicons.org/kibana/005571",
+      "difficulty": "intermediate",
+      "tools": ["Kibana", "Elasticsearch", "Logstash", "Beats", "Elastic APM", "Canvas", "Prometheus", "Grafana", "Docker", "Kubernetes"],
+      "levels": {
+        "beginner": [
+          {
+            "topic": "Introduction",
+            "concepts": ["What is Kibana?", "Role in Elastic Stack", "Kibana vs Elasticsearch", "Architecture Overview"],
+            "description": "Understand Kibana's role as the front-end for Elasticsearch."
+          },
+          {
+            "topic": "UI & Navigation",
+            "concepts": ["Home Screen", "Navigation", "Spaces", "Dark/Light Mode"],
+            "description": "Get familiar with Kibana's interface."
+          },
+          {
+            "topic": "Discover",
+            "concepts": ["KQL (Kibana Query Language)", "Lucene Syntax", "Filters", "Saved Searches"],
+            "description": "Query and explore Elasticsearch data interactively."
+          },
+          {
+            "topic": "Basic Visualizations",
+            "concepts": ["Lens", "Bar/Line/Pie Charts", "Tables", "Tag Clouds"],
+            "description": "Create basic visualizations to analyze data."
+          },
+          {
+            "topic": "Data Views",
+            "concepts": ["Creating Data Views", "Field Management", "Scripted Fields", "Runtime Fields"],
+            "description": "Define how Kibana interprets Elasticsearch indices."
+          }
+        ],
+        "intermediate": [
+          {
+            "topic": "Dashboards",
+            "concepts": ["Dashboard Creation", "Filters & Controls", "Drilldowns", "Export/Import"],
+            "description": "Organize multiple visualizations in dashboards."
+          },
+          {
+            "topic": "Advanced Visualizations",
+            "concepts": ["TSVB (Time Series)", "Timelion", "Vega", "Canvas"],
+            "description": "Build flexible, time-series, and custom visualizations."
+          },
+          {
+            "topic": "Dev Tools",
+            "concepts": ["Console for ES Queries", "Inspect Queries", "API Playground"],
+            "description": "Work directly with Elasticsearch from Kibana."
+          },
+          {
+            "topic": "Data Management",
+            "concepts": ["Runtime Mappings", "Field Statistics", "Index Patterns"],
+            "description": "Fine-tune data structures in Kibana."
+          },
+          {
+            "topic": "Reporting",
+            "concepts": ["PDF Reports", "CSV Exports", "Scheduled Reports"],
+            "description": "Generate reports from dashboards and visualizations."
+          }
+        ],
+        "advanced": [
+          {
+            "topic": "Security Integration",
+            "concepts": ["Spaces Security", "RBAC", "Dashboard-Only Mode"],
+            "description": "Manage security and access control in Kibana."
+          },
+          {
+            "topic": "Monitoring",
+            "concepts": ["Stack Monitoring", "Logs UI", "Metrics UI", "APM"],
+            "description": "Monitor the Elastic Stack with Kibana."
+          },
+          {
+            "topic": "Alerting & Actions",
+            "concepts": ["Rules", "Connectors (Email, Slack, Webhooks)", "Threshold Alerts"],
+            "description": "Automate alerts and actions from data conditions."
+          },
+          {
+            "topic": "Machine Learning Basics",
+            "concepts": ["Anomaly Detection", "Trend Analysis", "Visualizing ML Results"],
+            "description": "Apply built-in ML features in Kibana."
+          },
+          {
+            "topic": "Elastic Maps",
+            "concepts": ["Geo Data Visualization", "Heatmaps", "Region Maps"],
+            "description": "Visualize geospatial data with Kibana Maps."
+          }
+        ],
+        "expert": [
+          {
+            "topic": "Advanced ML",
+            "concepts": ["Forecasting", "Outlier Detection", "Population Analysis"],
+            "description": "Apply advanced ML capabilities in Kibana."
+          },
+          {
+            "topic": "Elastic Maps Advanced",
+            "concepts": ["Vector Tiles", "Custom Layers", "Geo-Shape Queries"],
+            "description": "Work with real-time and large-scale geo data."
+          },
+          {
+            "topic": "Canvas Mastery",
+            "concepts": ["Workpads", "Expressions", "Custom Branding"],
+            "description": "Create pixel-perfect visual presentations."
+          },
+          {
+            "topic": "Search Experience Optimization",
+            "concepts": ["Query Tuning", "Synonyms", "Search UI Integration"],
+            "description": "Optimize search relevance with Kibana tools."
+          },
+          {
+            "topic": "Kibana Internals",
+            "concepts": ["Plugin Development", "Extending Visualizations", "Architecture"],
+            "description": "Customize and extend Kibana functionality."
+          }
+        ]
+      }
+    },
+    {
+      "title": "NoSQL Roadmap",
+      "description": "A structured path to master NoSQL databases—from fundamentals to advanced distributed, multi-model, and real-time systems.",
+      "image": "https://cdn.simpleicons.org/mongodb/47A248",
+      "difficulty": "beginner",
+      "tools": [
+        "MongoDB",
+        "Cassandra",
+        "Redis",
+        "Couchbase / CouchDB",
+        "Neo4j",
+        "Amazon DynamoDB",
+        "Elasticsearch / OpenSearch",
+        "Firebase Realtime / Firestore",
+        "Cosmos DB",
+        "ScyllaDB",
+        "ArangoDB",
+        "FaunaDB",
+        "HBase"
+      ],
+      "levels": {
+        "beginner": [
+          {
+            "topic": "Introduction & Motivation",
+            "concepts": ["What is NoSQL?", "SQL vs NoSQL", "History & trends", "CAP theorem basics"],
+            "description": "Understand why NoSQL exists, its trade-offs, and areas where it's useful."
+          },
+          {
+            "topic": "NoSQL Models",
+            "concepts": ["Document", "Key-Value", "Column-Family", "Graph", "Wide-Column", "Time-Series"],
+            "description": "Explore different NoSQL paradigms and their use cases."
+          },
+          {
+            "topic": "Schema & Data Modeling Basics",
+            "concepts": ["Schema-less design", "Denormalization", "Embedding vs referencing", "Document structure"],
+            "description": "Learn how to model data without rigid schemas."
+          },
+          {
+            "topic": "CRUD Operations",
+            "concepts": ["Insert / Put", "Find / Get / Query", "Update / Upsert", "Delete"],
+            "description": "Perform basic operations across NoSQL databases."
+          },
+          {
+            "topic": "Basic Querying",
+            "concepts": ["Filters / Where", "Projection / Select fields", "Sorting / OrderBy", "Simple key lookups"],
+            "description": "Retrieve and traverse data with simple queries."
+          },
+          {
+            "topic": "Indexes & TTL",
+            "concepts": ["Single-field index", "Compound index / composite", "Unique indexes", "TTL / expiry indexes"],
+            "description": "Optimize reads and manage data lifecycle."
+          }
+        ],
+        "intermediate": [
+          {
+            "topic": "Advanced Data Modeling",
+            "concepts": ["One-to-Many & Many-to-Many", "Nested arrays / lists", "Polymorphic data", "Bucket pattern"],
+            "description": "Design flexible, efficient models for real-world use cases."
+          },
+          {
+            "topic": "Query Operators & Expressions",
+            "concepts": ["Comparison operators", "Logical operators", "Array operators", "Regex / text search"],
+            "description": "Write richer and more expressive queries."
+          },
+          {
+            "topic": "Aggregation Pipelines / Query Plans",
+            "concepts": ["Match / Filter stage", "Group / Aggregate", "Project / Transform", "Lookup / Join-like operations", "Unwind / Flatten arrays"],
+            "description": "Perform transformations, analytics, and advanced queries inside the database."
+          },
+          {
+            "topic": "Transactions & Concurrency",
+            "concepts": ["Atomic operations / single-document", "Multi-document transactions", "Isolation levels", "Optimistic vs pessimistic concurrency"],
+            "description": "Ensure data correctness in multi-user environments."
+          },
+          {
+            "topic": "Replication & Sharding",
+            "concepts": ["Replica sets / replicas", "Automatic sharding / partitioning", "Shard keys / partition keys", "Consistency levels / tunable consistency"],
+            "description": "Scale data across nodes while maintaining availability."
+          },
+          {
+            "topic": "Consistency & CAP Trade-offs",
+            "concepts": ["Strong consistency", "Eventual consistency", "Read/write quorums", "Causal consistency"],
+            "description": "Understand consistency models and design decisions for distributed systems."
+          },
+          {
+            "topic": "Validation & Constraints",
+            "concepts": ["Schema validation rules", "Document constraints / JSON schema", "Validation on write", "Business logic enforcement"],
+            "description": "Enforce data quality even in schema-less systems."
+          }
+        ],
+        "advanced": [
+          {
+            "topic": "Performance & Query Tuning",
+            "concepts": ["Index optimization strategies", "Query plan / explain", "Avoiding hot shards", "Cursor optimization"],
+            "description": "Improve performance, reduce latency, and scale reads."
+          },
+          {
+            "topic": "Complex Aggregations & Analytics",
+            "concepts": ["Faceted search / drill-down", "Bucketing / histogram", "Window functions (if supported)", "MapReduce / reduce-by-key"],
+            "description": "Do analytics and summary operations within NoSQL."
+          },
+          {
+            "topic": "Data Distribution Strategies",
+            "concepts": ["Partitioning strategies", "Rebalancing shards", "Data locality", "Collocation of related data"],
+            "description": "Ensure data is distributed smartly across nodes."
+          },
+          {
+            "topic": "Security & Authorization",
+            "concepts": ["Authentication (LDAP, OAuth)", "Role-Based Access Control (RBAC)", "Encryption at rest / in tran­sit", "Field-level security"],
+            "description": "Protect data and access in database systems."
+          },
+          {
+            "topic": "Event-driven & Change Data Capture",
+            "concepts": ["Change Streams / CDC", "Triggers / Webhooks", "Integration with Kafka / messaging"],
+            "description": "React to database changes and integrate with streaming systems."
+          },
+          {
+            "topic": "Backup, Recovery & High Availability",
+            "concepts": ["Snapshots", "Incremental backups", "Point-in-time recovery", "Failover / disaster recovery strategies"],
+            "description": "Ensure data durability and resilience."
+          },
+          {
+            "topic": "Polyglot Persistence",
+            "concepts": ["Combining SQL + NoSQL", "Hybrid systems", "Choosing the right data store per use-case", "Integration patterns"],
+            "description": "Design systems using multiple storage paradigms."
+          }
+        ],
+        "expert": [
+          {
+            "topic": "Distributed Systems Theory",
+            "concepts": ["CAP theorem in practice", "Paxos / Raft / Consensus algorithms", "Leader election", "Quorum protocols"],
+            "description": "Understand the foundational distributed algorithms behind NoSQL systems."
+          },
+          {
+            "topic": "Hybrid & HTAP Architectures",
+            "concepts": ["Hybrid transactional-analytical workloads (HTAP)", "Real-time analytics + OLTP", "SQL + NoSQL integration"],
+            "description": "Design architectures combining different workloads."
+          },
+          {
+            "topic": "Graph & Multi-model Databases",
+            "concepts": ["Graph queries (Cypher, Gremlin)", "Graph traversals", "Graph analytics", "Multi-model (document + graph)"],
+            "description": "Work with systems supporting multiple data models."
+          },
+          {
+            "topic": "Time-Series, IoT & Real-time NoSQL",
+            "concepts": ["Time-series stores", "Retention / downsampling", "High-frequency writes", "Querying windows / aggregates"],
+            "description": "Manage high-throughput time-series data in NoSQL systems."
+          },
+          {
+            "topic": "Search & Analytics Integration",
+            "concepts": ["Elasticsearch / OpenSearch", "Full-text search inside NoSQL", "Log analytics", "Hybrid queries"],
+            "description": "Combine NoSQL with search and analytics engines."
+          },
+          {
+            "topic": "Big Data & Streaming Integration",
+            "concepts": ["Spark + NoSQL", "Kafka → NoSQL pipelines", "Batch + streaming pipelines"],
+            "description": "Use NoSQL in big data and real-time processing systems."
+          },
+          {
+            "topic": "Global & Geo-distributed NoSQL",
+            "concepts": ["Multi-region clusters", "Conflict resolution / eventual consistency", "Geo-partitioning", "Data sovereignty"],
+            "description": "Build resilient systems across geographies."
+          },
+          {
+            "topic": "Advanced Multi-model / Polyglot Databases",
+            "concepts": ["Document + Graph + Key-Value in one DB", "Databases like ArangoDB, Cosmos DB", "Switching models"],
+            "description": "Unlock advanced capabilities of multi-model NoSQL systems."
+          }
+        ]
+      }
+    },
+    {
+      "title": "dbt (Data Build Tool) Roadmap",
+      "description": "Master dbt for transforming raw data into clean, tested, production-grade models leveraging SQL, version control, and analytics engineering practices.",
+      "image": "https://cdn.simpleicons.org/dbt/0AF",
+      "difficulty": "intermediate",
+      "tools": ["dbt Cloud", "dbt CLI", "Snowflake", "BigQuery", "PostgreSQL", "GitHub / GitLab", "Jinja / Python macros", "VS Code", "Data Catalog (e.g. DataHub, Atlan)"],
+      "levels": {
+        "beginner": [
+          {
+            "topic": "Introduction to dbt",
+            "concepts": ["What is dbt?", "Why dbt in the modern data stack?", "Core abstractions (models, seeds, snapshots)", "dbt workflow"],
+            "description": "Get acquainted with dbt's philosophy and role in data transformation."
+          },
+          {
+            "topic": "Setup & Configuration",
+            "concepts": ["dbt Cloud vs dbt CLI", "Connecting to your data warehouse", "Project initialization", "profiles.yml"],
+            "description": "Set up your dbt environment and connection."
+          },
+          {
+            "topic": "Writing Models",
+            "concepts": ["SELECT statements", "ref() function", "source()", "Jinja templating basics"],
+            "description": "Create simple transformation logic in dbt models."
+          },
+          {
+            "topic": "Project Structure",
+            "concepts": ["models/", "seeds/", "snapshots/", "macros/", "tests/", "docs/"],
+            "description": "Organize your dbt project following conventions."
+          }
+        ],
+        "intermediate": [
+          {
+            "topic": "Materializations",
+            "concepts": ["view", "table", "incremental", "ephemeral", "incremental logic"],
+            "description": "Choose and configure how models are materialized."
+          },
+          {
+            "topic": "Tests & Documentation",
+            "concepts": ["Schema tests (unique, not_null)", "Custom tests", "Generating docs", "Documentation coverage"],
+            "description": "Ensure reliability and clarity of your transformed data."
+          },
+          {
+            "topic": "Macros & Variables",
+            "concepts": ["Custom SQL macros", "Global variables / jinja variables", "Using packages", "Argument passing"],
+            "description": "Abstract and reuse logic in your dbt project."
+          },
+          {
+            "topic": "Package Usage",
+            "concepts": ["dbt-utils", "community packages", "Analytics Engineering packages", "Managing dependencies"],
+            "description": "Leverage the dbt ecosystem to speed development."
+          }
+        ],
+        "advanced": [
+          {
+            "topic": "Snapshots",
+            "concepts": ["Change tracking (SCD Type 2)", "strategies", "incremental snapshots", "historical tables"],
+            "description": "Capture evolving data over time."
+          },
+          {
+            "topic": "Exposures, Metrics & Lineage",
+            "concepts": ["Define business metrics", "Model dependencies", "Lineage graphs", "Impact analysis"],
+            "description": "Connect your transformations to business outcomes."
+          },
+          {
+            "topic": "CI/CD & Testing",
+            "concepts": ["Git workflows", "Pull request testing", "Continuous integration (GitHub Actions, GitLab CI)", "Deployment strategies"],
+            "description": "Automate validation and deployment of your dbt models."
+          },
+          {
+            "topic": "Performance Optimization",
+            "concepts": ["Partitioning / clustering", "Incremental model tuning", "Using ephemeral models smartly", "Query profiling"],
+            "description": "Ensure dbt models perform efficiently."
+          }
+        ],
+        "expert": [
+          {
+            "topic": "Custom Adapters & Plugins",
+            "concepts": ["Writing adapters for new warehouses", "Plugin architecture", "Extending dbt's core"],
+            "description": "Extend dbt to support custom platforms and use-cases."
+          },
+          {
+            "topic": "Governance & Observability",
+            "concepts": ["Data catalog integration", "Lineage tracking", "Data quality monitoring", "Row-level lineage"],
+            "description": "Ensure data trust, discoverability, and quality."
+          },
+          {
+            "topic": "Team & Workflow Practices",
+            "concepts": ["Branching strategies", "Code review practices", "Documentation standards", "Monorepos vs multi-repo"],
+            "description": "Scale dbt across multiple users and teams."
+          },
+          {
+            "topic": "Advanced Jinja & Logic",
+            "concepts": ["Custom filters & macros", "Loops / recursion in Jinja", "Conditional logic", "Macro recursion"],
+            "description": "Write more dynamic and flexible dbt logic."
+          },
+          {
+            "topic": "dbt Internals",
+            "concepts": ["Parser / compiler", "Execution engine", "Graph resolution", "Materialization mechanics"],
+            "description": "Understand internal workings of dbt for better debugging and extension."
+          }
+        ]
+      }
+    },
+    {
+      "title": "Snowflake Roadmap",
+      "description": "Master Snowflake for cloud data warehousing, ELT/ETL, data sharing, and advanced analytics.",
+      "image": "https://cdn.simpleicons.org/snowflake/0AF",
+      "difficulty": "intermediate",
+      "tools": ["Snowflake", "Snowsight UI", "Snowpark", "dbt", "Fivetran / Stitch / Matillion", "Airflow / Prefect", "Git", "Streamlit / Data Apps"],
+      "levels": {
+        "beginner": [
+          {
+            "topic": "Introduction & Architecture",
+            "concepts": ["What is Snowflake?", "Cloud-native architecture", "Separation of compute & storage", "Use cases"],
+            "description": "Understand what Snowflake offers as a data platform."
+          },
+          {
+            "topic": "Core Concepts",
+            "concepts": ["Virtual Warehouses", "Databases", "Schemas", "Stages / File formats"],
+            "description": "Learn the fundamental building blocks in Snowflake."
+          },
+          {
+            "topic": "Loading Data",
+            "concepts": ["COPY INTO", "Bulk loads (CSV, PARQUET, JSON)", "Internal & external stages", "External tables"],
+            "description": "Ingest data into Snowflake from varied sources."
+          },
+          {
+            "topic": "SQL & Querying",
+            "concepts": ["SELECT", "JOINs", "Filtering", "Subqueries", "CTEs"],
+            "description": "Write SQL queries against data in Snowflake."
+          }
+        ],
+        "intermediate": [
+          {
+            "topic": "Semi-structured Data Handling",
+            "concepts": ["VARIANT type", "JSON/XML handling", "FLATTEN", "Path expressions"],
+            "description": "Work with semi-structured data in Snowflake."
+          },
+          {
+            "topic": "Time Travel & Cloning",
+            "concepts": ["Time Travel", "Zero-copy cloning", "Fail-safe", "Retention periods"],
+            "description": "Utilize Snowflake's versioning and cloning features."
+          },
+          {
+            "topic": "Security & Access Control",
+            "concepts": ["Roles & privileges", "Row-level security", "Network policies", "Secure views"],
+            "description": "Manage access control and secure your data."
+          },
+          {
+            "topic": "Performance Tuning",
+            "concepts": ["Warehouse sizing / auto-suspend", "Result caching", "Clustering keys", "Query profiling"],
+            "description": "Optimize query performance and resource costs."
+          }
+        ],
+        "advanced": [
+          {
+            "topic": "Snowpipe & Streaming Ingestion",
+            "concepts": ["Automatic ingestion", "Event-driven loads", "Continuous data loading", "Pipe monitoring"],
+            "description": "Ingest data continuously and near real-time."
+          },
+          {
+            "topic": "Tasks, Streams & Tasks Graphs",
+            "concepts": ["Tasks for orchestration", "Streams (change data capture)", "Task scheduling", "Error handling"],
+            "description": "Automate workflows and build pipelines within Snowflake."
+          },
+          {
+            "topic": "External Functions & UDFs",
+            "concepts": ["Calling APIs (via AWS Lambda / Azure)", "JavaScript / Python UDFs", "Secure external functions"],
+            "description": "Let Snowflake call external logic or services."
+          },
+          {
+            "topic": "Data Sharing & Marketplace",
+            "concepts": ["Secure data sharing", "Reader accounts", "Data Marketplace", "Live tables / shares"],
+            "description": "Share data securely across organizations."
+          }
+        ],
+        "expert": [
+          {
+            "topic": "Multi-cloud / Multi-region",
+            "concepts": ["Cross-cloud strategy (AWS, GCP, Azure)", "Replication across regions", "Failover scenarios"],
+            "description": "Operate Snowflake across clouds and regions."
+          },
+          {
+            "topic": "Cost & Resource Optimization",
+            "concepts": ["Auto-suspend / scaling", "Usage monitoring", "Cost attribution", "Resource tagging"],
+            "description": "Manage and control costs at scale."
+          },
+          {
+            "topic": "Governance & Lineage",
+            "concepts": ["Data lineage / catalog integration", "Access history", "Data classification / masking", "Tagging"],
+            "description": "Implement governance, audit, and observability."
+          },
+          {
+            "topic": "Snowpark & In-Database Compute",
+            "concepts": ["Snowpark (Python / Java / Scala)", "DataFrame API", "In-database ML / UDFs", "Stored procedures"],
+            "description": "Write advanced logic and analytics inside Snowflake."
+          },
+          {
+            "topic": "Streams & Tasks for Real-time Pipelines",
+            "concepts": ["Change data capture", "Event-driven tasks", "Micro-batching", "Near real-time workflows"],
+            "description": "Build real-time data pipelines using native constructs."
+          }
+        ]
+      }
+    },
+    {
+      "title": "Apache Flink Roadmap",
+      "description": "Master Apache Flink for high-throughput, low-latency stream processing, real-time analytics, and event-driven applications.",
+      "image": "https://cdn.simpleicons.org/apache/0AF",
+      "difficulty": "advanced",
+      "tools": ["Apache Flink", "Kafka", "Docker", "Kubernetes", "Prometheus", "Grafana", "AWS S3 / HDFS", "Pulsar", "Flink SQL CLI", "IDE (IntelliJ / VS Code)"],
+      "levels": {
+        "beginner": [
+          {
+            "topic": "Introduction & Use Cases",
+            "concepts": ["What is Flink?", "Stream vs Batch", "Use Cases (real-time analytics, ETL)", "Flink ecosystem"],
+            "description": "Understand Flink's role in stream processing."
+          },
+          {
+            "topic": "Core Concepts",
+            "concepts": ["DataStream API", "Time semantics (event / processing)", "State", "Checkpointing / fault tolerance"],
+            "description": "Learn the programming model and how stateful streaming works."
+          },
+          {
+            "topic": "Setup & Environment",
+            "concepts": ["Local cluster", "Flink CLI", "Docker / Kubernetes deployment", "Execution environmental settings"],
+            "description": "Run Flink locally and on containerized environments."
+          },
+          {
+            "topic": "Hello-world Job",
+            "concepts": ["WordCount example", "Sources & Sinks", "Execution environment", "Testing jobs"],
+            "description": "Build and run a basic Flink application."
+          }
+        ],
+        "intermediate": [
+          {
+            "topic": "Windowing & Time",
+            "concepts": ["Tumbling, Sliding, Session windows", "Count / Time windows", "Late data handling", "Watermarks", "Allowed lateness"],
+            "description": "Aggregate and process data over windows of time correctly."
+          },
+          {
+            "topic": "State Management",
+            "concepts": ["Keyed state", "Operator state", "State backends (RocksDB, Memory)", "State TTL / cleanup"],
+            "description": "Maintain and handle state in stream computations."
+          },
+          {
+            "topic": "Checkpointing & Fault Tolerance",
+            "concepts": ["Checkpoint interval", "Savepoints", "Exactly-once / At-least-once semantics", "Rescaling jobs"],
+            "description": "Ensure resilience and correctness in streaming jobs."
+          }
+        ],
+        "advanced": [
+          {
+            "topic": "Connectors & Integration",
+            "concepts": ["Kafka connector", "Pulsar connector", "JDBC sinks / sources", "S3 / HDFS connectors", "Elasticsearch sink"],
+            "description": "Plug Flink into external storage and messaging systems."
+          },
+          {
+            "topic": "Complex Event Processing (CEP)",
+            "concepts": ["Pattern matching", "Event sequences", "Time-based conditions", "CEP API"],
+            "description": "Detect patterns and composite events in streams."
+          },
+          {
+            "topic": "Table API & SQL",
+            "concepts": ["Flink SQL", "Temporal joins", "Catalogs / metadata", "Unified batch + streaming"],
+            "description": "Write declarative queries over streaming data."
+          },
+          {
+            "topic": "Performance Tuning",
+            "concepts": ["Parallelism & operator chaining", "Backpressure control", "Memory / buffer tuning", "Network optimization"],
+            "description": "Fine-tune Flink for throughput and latency."
+          }
+        ],
+        "expert": [
+          {
+            "topic": "Deployment & Scaling",
+            "concepts": ["Standalone mode", "YARN", "Kubernetes deployment", "High-availability clusters"],
+            "description": "Run Flink reliably in production at scale."
+          },
+          {
+            "topic": "Monitoring & Observability",
+            "concepts": ["Flink Web UI", "Metrics / Prometheus / Grafana", "Logging / tracing", "Watermark tracking"],
+            "description": "Monitor, debug, and observe production jobs."
+          },
+          {
+            "topic": "Custom UDFs & Extensions",
+            "concepts": ["User-defined functions (scalar / aggregate)", "Python / Java / Scala UDFs", "Custom connectors"],
+            "description": "Extend Flink with custom logic or integrations."
+          },
+          {
+            "topic": "Security & Access Control",
+            "concepts": ["Kerberos integration", "TLS / encryption", "Authorization / role-based access", "Data masking / encryption"],
+            "description": "Secure Flink clusters and data flows."
+          },
+          {
+            "topic": "Flink Internals & Execution Engine",
+            "concepts": ["JobManager / TaskManager architecture", "Network stack", "Scheduler / execution graph", "Backpressure handling"],
+            "description": "Understand how Flink schedules, executes, and manages workloads."
+          }
+        ]
+      }
+    },
+    {
+      "title": "TensorFlow Roadmap",
+      "description": "Master TensorFlow for developing, training, and deploying machine learning models at scale—from research to production.",
+      "image": "https://cdn.simpleicons.org/tensorflow/0AF",
+      "difficulty": "advanced",
+      "tools": ["TensorFlow", "Keras", "TensorBoard", "TF Serving", "TF Lite / LiteRT", "TensorFlow.js", "TPUs / GPU tools", "Colab / Jupyter", "VS Code / PyCharm"],
+      "levels": {
+        "beginner": [
+          {
+            "topic": "Introduction & Ecosystem",
+            "concepts": ["What is TensorFlow?", "Use Cases", "TensorFlow vs PyTorch", "TensorFlow Ecosystem (TFX, Lite, Serving)"],
+            "description": "Understand TensorFlow's position in ML, its ecosystem, and how it compares to alternatives."
+          },
+          {
+            "topic": "Core Concepts & Tensors",
+            "concepts": ["Tensors", "Eager Execution", "Graphs & Functions", "Operations / Math APIs"],
+            "description": "Learn the fundamental building blocks in TensorFlow."
+          },
+          {
+            "topic": "Setup & Environment",
+            "concepts": ["Installation (pip / conda)", "GPU / TPU Setup", "Google Colab / Jupyter"],
+            "description": "Configure your local or cloud environment to run TensorFlow."
+          },
+          {
+            "topic": "Hello World Models",
+            "concepts": ["Basic operations", "Linear Regression", "MNIST classification", "Saving / Loading models"],
+            "description": "Build and train simple models to get hands-on experience."
+          }
+        ],
+        "intermediate": [
+          {
+            "topic": "Keras High-Level API",
+            "concepts": ["Sequential model", "Functional API", "Layers, Models, Callbacks"],
+            "description": "Design neural network architectures using the built-in Keras interface."
+          },
+          {
+            "topic": "Training & Validation",
+            "concepts": ["model.fit / model.evaluate", "Callbacks (EarlyStopping, ModelCheckpoint)", "Custom callback", "Validation / Cross-validation"],
+            "description": "Train models with best practices and monitor performance."
+          },
+          {
+            "topic": "Data Pipeline (tf.data)",
+            "concepts": ["Datasets", "Prefetching", "Caching", "Data augmentation", "Performance tuning"],
+            "description": "Build efficient data ingest pipelines to feed your model."
+          },
+          {
+            "topic": "Transfer Learning & Pre-trained Models",
+            "concepts": ["Feature extraction", "Fine-tuning", "Using TensorFlow Hub models"],
+            "description": "Leverage existing models to speed up training and improve generalization."
+          }
+        ],
+        "advanced": [
+          {
+            "topic": "Custom Models & Training Loops",
+            "concepts": ["Subclassing tf.keras.Model", "Custom Layers", "Custom training loops with tf.GradientTape"],
+            "description": "Implement model architectures and training logic not provided out-of-the-box."
+          },
+          {
+            "topic": "Distributed / Scalable Training",
+            "concepts": ["MirroredStrategy", "MultiWorkerMirroring", "TPUStrategy", "Parameter servers"],
+            "description": "Train models across multiple GPUs, machines, or TPUs."
+          },
+          {
+            "topic": "Model Deployment (TF Serving / REST / gRPC)",
+            "concepts": ["SavedModel format", "TensorFlow Serving", "REST / gRPC endpoints", "Model versioning"],
+            "description": "Serve trained models reliably in production."
+          },
+          {
+            "topic": "Optimization / Speed-ups",
+            "concepts": ["XLA compiler", "Mixed precision (float16)", "Pruning / Quantization", "Graph optimization"],
+            "description": "Make models faster and more efficient."
+          }
+        ],
+        "expert": [
+          {
+            "topic": "TensorFlow Lite & LiteRT",
+            "concepts": ["Mobile / Edge deployment", "Quantization", "Model conversion", "LiteRT (successor of tf.lite)"],
+            "description": "Deploy models on mobile, embedded, or edge devices."
+          },
+          {
+            "topic": "TensorFlow.js",
+            "concepts": ["In-browser inference", "Web deployment", "Transfer learning in web"],
+            "description": "Run ML models directly in the browser via JavaScript."
+          },
+          {
+            "topic": "TensorFlow Extended (TFX) / ML Pipelines",
+            "concepts": ["Data validation (TFDV)", "Transformations (TF Transform)", "Model analysis (TFMA)", "Pipelines (Kubeflow / Apache Beam)"],
+            "description": "Build full production ML pipelines using TFX components."
+          },
+          {
+            "topic": "Custom / Native Ops & Kernel Development",
+            "concepts": ["C++ / CUDA ops", "Writing custom GPU kernels", "Optimization for hardware accelerators"],
+            "description": "Extend TensorFlow with custom operations at low-level for performance."
+          },
+          {
+            "topic": "Research / Advanced Models",
+            "concepts": ["GANs", "Reinforcement Learning", "NLP / Transformer Models", "Graph Neural Networks"],
+            "description": "Apply TensorFlow to complex, experimental systems and research work."
+          }
+        ]
+      }
+    },
+    {
+      "title": "PyTorch Roadmap",
+      "description": "Master PyTorch for research and production deep learning—from flexible prototyping to scalable deployment.",
+      "image": "https://cdn.simpleicons.org/pytorch/0AF",
+      "difficulty": "advanced",
+      "tools": ["PyTorch", "torchvision", "TorchText", "TorchAudio", "TorchServe", "ONNX", "PyTorch Lightning", "Weights & Biases", "Colab / Jupyter", "VS Code / PyCharm"],
+      "levels": {
+        "beginner": [
+          {
+            "topic": "Introduction & Paradigms",
+            "concepts": ["What is PyTorch?", "Use Cases", "Dynamic computation (Autograd)", "PyTorch ecosystem"],
+            "description": "Understand PyTorch's philosophy and compare it with TensorFlow."
+          },
+          {
+            "topic": "Core Tensors & Autograd",
+            "concepts": ["torch.Tensor", "requires_grad", "gradients", "backward()", "no_grad context"],
+            "description": "Build operations with automatic differentiation support."
+          },
+          {
+            "topic": "Setup & Environment",
+            "concepts": ["Installation (pip / conda)", "GPU setup (CUDA)", "Colab / Jupyter"],
+            "description": "Prepare your environment to run PyTorch models."
+          },
+          {
+            "topic": "Hello World Models",
+            "concepts": ["Simple forward/backward passes", "Linear regression", "MNIST classification", "Saving / Loading models"],
+            "description": "Train your first simple model to get hands-on experience."
+          }
+        ],
+        "intermediate": [
+          {
+            "topic": "Neural Networks (nn module)",
+            "concepts": ["nn.Module base class", "Building layers", "Loss functions, Optimizers", "Forward method"],
+            "description": "Construct neural network architectures using the model abstraction."
+          },
+          {
+            "topic": "Training Loop",
+            "concepts": ["Forward pass", "Loss computation", "Backward pass", "Optimizer.step()", "Epochs / Batches"],
+            "description": "Implement training and validation loops manually to gain control."
+          },
+          {
+            "topic": "Data Loading & Transformations",
+            "concepts": ["Dataset class", "DataLoader", "Transforms / augmentations", "Custom dataset"],
+            "description": "Load and preprocess data efficiently for training."
+          },
+          {
+            "topic": "Transfer Learning & Pre-trained Models",
+            "concepts": ["Using torchvision / HuggingFace models", "Freezing layers", "Fine-tuning"],
+            "description": "Leverage existing weights to accelerate training."
+          }
+        ],
+        "advanced": [
+          {
+            "topic": "Custom Models & Layers",
+            "concepts": ["Subclassing nn.Module", "Custom layers / blocks", "Attention / Transformer blocks"],
+            "description": "Design complex architectures tailored to your needs."
+          },
+          {
+            "topic": "Distributed Training",
+            "concepts": ["DataParallel", "DistributedDataParallel (DDP)", "RPC / process groups", "Multi-GPU / multi-node training"],
+            "description": "Scale training across multiple devices and nodes."
+          },
+          {
+            "topic": "TorchScript & ONNX Export",
+            "concepts": ["Tracing / Scripting", "TorchScript modules", "Export to ONNX", "Optimize for inference"],
+            "description": "Prepare models for production inference across platforms."
+          },
+          {
+            "topic": "Advanced Deployment (TorchServe",
+            "concepts": ["Model serving", "REST / gRPC endpoints", "Batching / scaling", "Versioning"],
+            "description": "Serve models reliably in production environments."
+          }
+        ],
+        "expert": [
+          {
+            "topic": "Vision / NLP / Audio Submodules",
+            "concepts": ["TorchVision models / datasets / transforms", "TorchText / tokenization / transformers", "TorchAudio / speech models"],
+            "description": "Use domain-specific modules to build advanced models."
+          },
+          {
+            "topic": "Lightning & High-level Frameworks",
+            "concepts": ["PyTorch Lightning", "Accelerators", "Trainer abstraction", "Best practices"],
+            "description": "Use frameworks that standardize structure and scale experiments."
+          },
+          {
+            "topic": "Custom Extensions & Kernels",
+            "concepts": ["C++ / CUDA extensions", "Custom ops", "Memory / performance optimization"],
+            "description": "Write low-level code to extend PyTorch's capabilities."
+          },
+          {
+            "topic": "Research / Cutting-edge Models",
+            "concepts": ["GANs, Transformers, Diffusion Models", "Reinforcement Learning", "Meta-learning"],
+            "description": "Apply PyTorch to experimental, research-level architectures."
+          },
+          {
+            "topic": "Framework Internals & Compiler Work",
+            "concepts": ["Torch Compiler (TorchInductor, AOT Autograd)", "Graph optimization", "Memory planning / scheduling"],
+            "description": "Understand deep internals and contribute to the PyTorch ecosystem."
+          }
+        ]
+      }
+    },
+    {
+      "title": "Machine Learning Roadmap",
+      "description": "Build a strong foundation and progress to advanced machine learning methods, including deep learning and MLOps.",
+      "image": "https://cdn.simpleicons.org/scikitlearn/0AF",
+      "difficulty": "intermediate",
+      "tools": ["scikit-learn", "XGBoost", "LightGBM", "CatBoost", "Optuna", "Hyperopt", "MLflow", "Weights & Biases", "TensorFlow", "PyTorch", "Keras", "Kubeflow", "AWS SageMaker / GCP AI / Azure ML"],
+      "levels": {
+        "beginner": [
+          {
+            "topic": "Foundations & Paradigms",
+            "concepts": ["Definition of ML", "Supervised / Unsupervised / Reinforcement", "Typical applications", "Ethical implications"],
+            "description": "Get introduced to what machine learning is and what it can do."
+          },
+          {
+            "topic": "Mathematical Foundations",
+            "concepts": ["Linear Algebra", "Calculus (gradients)", "Probability & Statistics"],
+            "description": "Learn the math that underlies models and optimization."
+          },
+          {
+            "topic": "Python & Tooling",
+            "concepts": ["NumPy", "Pandas", "Matplotlib / Seaborn", "Jupyter Notebook"],
+            "description": "Set up your environment and workflow for ML experimentation."
+          },
+          {
+            "topic": "Data Preprocessing",
+            "concepts": ["Handling missing data", "Normalization / Scaling", "Encoding categories", "Train-test split"],
+            "description": "Prepare raw data for modeling."
+          }
+        ],
+        "intermediate": [
+          {
+            "topic": "Supervised Algorithms",
+            "concepts": ["Linear / Logistic Regression", "Decision Trees", "Support Vector Machines", "K-Nearest Neighbors"],
+            "description": "Build fundamental predictive models."
+          },
+          {
+            "topic": "Unsupervised Methods",
+            "concepts": ["K-Means Clustering", "Hierarchical Clustering", "PCA / dimensionality reduction"],
+            "description": "Discover structure in unlabeled data."
+          },
+          {
+            "topic": "Model Evaluation & Validation",
+            "concepts": ["Confusion matrix, Precision / Recall", "ROC / AUC", "Cross-validation", "Hyperparameter tuning (grid/random)"],
+            "description": "Assess and improve model performance."
+          },
+          {
+            "topic": "Regularization & Overfitting",
+            "concepts": ["Bias-variance tradeoff", "L1 / L2 regularization", "Dropout (for neural nets)", "Early stopping"],
+            "description": "Prevent models from overfitting."
+          }
+        ],
+        "advanced": [
+          {
+            "topic": "Ensemble Methods",
+            "concepts": ["Bagging", "Random Forest", "Gradient Boosting (XGBoost / LightGBM)"],
+            "description": "Combine multiple models to boost performance."
+          },
+          {
+            "topic": "Deep Learning Basics",
+            "concepts": ["Feedforward neural networks", "Activation functions", "Backward propagation"],
+            "description": "Transition into neural networks and deep learning."
+          },
+          {
+            "topic": "Feature Engineering",
+            "concepts": ["Feature selection", "Feature extraction / transformation", "Polynomial features", "Automated feature engineering"],
+            "description": "Create robust inputs for models."
+          },
+          {
+            "topic": "Hyperparameter Optimization",
+            "concepts": ["Grid / Random Search", "Bayesian optimization", "Optuna, Hyperopt", "Cross-Validation tuning"],
+            "description": "Find optimal model settings efficiently."
+          }
+        ],
+        "expert": [
+          {
+            "topic": "State-of-the-Art Deep Learning",
+            "concepts": ["Transformers, Attention, GANs, Diffusion Models", "Graph Neural Networks", "Reinforcement Learning"],
+            "description": "Work with leading-edge architectures in ML/AI."
+          },
+          {
+            "topic": "MLOps & Deployment",
+            "concepts": ["Model versioning", "CI/CD for models", "Monitoring / Drift detection", "Serving / inference"],
+            "description": "Operationalize models for production systems."
+          },
+          {
+            "topic": "Explainability & Fairness",
+            "concepts": ["SHAP, LIME", "Feature importance", "Bias detection & mitigation", "Model risk assessment"],
+            "description": "Make models understandable and ethically aligned."
+          },
+          {
+            "topic": "Federated / Differential Privacy",
+            "concepts": ["Distributed training on edge data", "Privacy-preserving ML", "Secure aggregation"],
+            "description": "Train models without centralized raw data."
+          },
+          {
+            "topic": "AutoML & Neural Architecture Search",
+            "concepts": ["Automated pipeline search", "NAS (neural architecture search)", "Auto feature engineering"],
+            "description": "Automate ML model design and optimization."
+          }
+        ]
+      }
+    },
+    {
+      "title": "Data Engineering Roadmap",
+      "description": "Build a strong foundation in data pipelines, architecture, and distributed systems to support analytics and ML workloads.",
+      "image": "https://cdn.simpleicons.org/apacheairflow/0AF",
+      "difficulty": "intermediate",
+      "tools": ["Python", "SQL", "Spark", "Kafka", "Flink", "Airflow / Prefect", "dbt", "Snowflake / BigQuery / Redshift", "Docker", "Kubernetes", "Terraform", "AWS / GCP / Azure", "Git"],
+      "levels": {
+        "beginner": [
+          {
+            "topic": "Introduction & Role",
+            "concepts": ["What is Data Engineering?", "Data vs ML", "Key responsibilities", "Overview of modern stack"],
+            "description": "Understand the field and its core tasks."
+          },
+          {
+            "topic": "Programming Basics",
+            "concepts": ["Python", "SQL", "Shell scripting", "Git basics"],
+            "description": "Master the essential tools for data workflows."
+          },
+          {
+            "topic": "Databases & Storage",
+            "concepts": ["Relational (Postgres, MySQL)", "NoSQL", "Data modeling (star, snowflake)", "Normalization"],
+            "description": "Work with data storage systems and structure data well."
+          },
+          {
+            "topic": "Linux & Command Line",
+            "concepts": ["Bash / shell", "File systems", "Permissions", "Process management", "SSH"],
+            "description": "Navigate and manage servers/tools via CLI."
+          }
+        ],
+        "intermediate": [
+          {
+            "topic": "ETL / ELT Pipelines",
+            "concepts": ["Batch processing", "Incremental loads", "Data transformations", "Error handling / logging"],
+            "description": "Build pipelines to ingest, clean, and transform data."
+          },
+          {
+            "topic": "Big Data Technologies",
+            "concepts": ["Apache Spark", "Kafka", "Flink", "Hadoop ecosystem"],
+            "description": "Process large-scale data with distributed computing."
+          },
+          {
+            "topic": "Cloud Platforms & Storage",
+            "concepts": ["AWS / GCP / Azure basics", "Object storage (S3 / GCS / ADLS)", "Managed services", "Serverless storage"],
+            "description": "Work with cloud infrastructure to store and process data."
+          },
+          {
+            "topic": "Data Warehousing / Lakehouse",
+            "concepts": ["Star / Snowflake schema", "Snowflake, Redshift, BigQuery", "Data Lake / Lakehouse architectures"],
+            "description": "Design architectures optimized for analytics."
+          }
+        ],
+        "advanced": [
+          {
+            "topic": "Orchestration & Scheduling",
+            "concepts": ["Apache Airflow", "Prefect", "Dagster", "Task dependencies", "Retry logic"],
+            "description": "Automate and coordinate data workflows."
+          },
+          {
+            "topic": "Streaming & Real-time Data",
+            "concepts": ["Kafka streams / Kinesis / PubSub", "Windowing", "Event-driven pipelines"],
+            "description": "Design pipelines that handle live, streaming data."
+          },
+          {
+            "topic": "Infrastructure as Code (IaC)",
+            "concepts": ["Terraform", "CloudFormation / ARM / Bicep", "Configuration management", "DevOps integration"],
+            "description": "Manage infrastructure declaratively and reproducibly."
+          }
+        ],
+        "expert": [
+          {
+            "topic": "Data Architecture & Patterns",
+            "concepts": ["Data Mesh", "Data Lakehouse", "Lambda / Kappa architectures", "Domain-driven design"],
+            "description": "Design robust, scalable data systems at enterprise scale."
+          },
+          {
+            "topic": "Performance & Optimization",
+            "concepts": ["Partitioning / Clustering / Index tuning", "Caching", "Query optimization", "Resource scaling"],
+            "description": "Optimize pipelines and storage for performance and cost."
+          },
+          {
+            "topic": "Security & Compliance",
+            "concepts": ["Encryption at rest / in transit", "Access control / IAM", "Data lineage / auditing", "GDPR / HIPAA / Privacy regulations"],
+            "description": "Ensure data systems are secure and compliant."
+          },
+          {
+            "topic": "Leadership & Strategy",
+            "concepts": ["Team structure", "Project management", "Stakeholder alignment", "Technology roadmap"],
+            "description": "Lead data engineering projects and teams toward strategic goals."
+          }
+        ]
+      }
+    },
+    {
+      "title": "AI & Deep Learning Roadmap",
+      "description": "Master AI & deep learning from fundamentals to advanced, production-ready systems and research specialization.",
+      "image": "https://cdn.simpleicons.org/openai/0AF",
+      "difficulty": "advanced",
+      "tools": ["TensorFlow", "PyTorch", "Hugging Face", "OpenAI / APIs", "Weights & Biases / MLflow", "Kubeflow / TFX", "NVIDIA GPUs / TPUs", "Jupyter / Colab"],
+      "levels": {
+        "beginner": [
+          {
+            "topic": "Introduction to AI & ML",
+            "concepts": ["Definition of AI", "History & milestones", "Applications", "Ethics / bias"],
+            "description": "Build conceptual foundations in artificial intelligence."
+          },
+          {
+            "topic": "Mathematical & Programming Prerequisites",
+            "concepts": ["Linear Algebra", "Calculus", "Probability", "Python / Libraries (NumPy, Pandas)"],
+            "description": "Acquire the mathematical and programming background needed."
+          },
+          {
+            "topic": "ML Foundations",
+            "concepts": ["Supervised / Unsupervised / Reinforcement", "Model evaluation", "Overfitting / Regularization"],
+            "description": "Get hands-on with basic ML techniques."
+          },
+          {
+            "topic": "Frameworks & Tools",
+            "concepts": ["TensorFlow", "PyTorch", "Keras", "Jupyter", "Libraries (scikit-learn)"],
+            "description": "Choose and set up your deep learning toolkit."
+          }
+        ],
+        "intermediate": [
+          {
+            "topic": "Deep Learning Architectures",
+            "concepts": ["Feedforward networks", "CNNs", "RNNs / LSTMs", "Autoencoders"],
+            "description": "Explore core neural network types and their applications."
+          },
+          {
+            "topic": "Computer Vision",
+            "concepts": ["Image classification", "Object detection / segmentation", "Transfer learning"],
+            "description": "Apply DL methods to visual data."
+          },
+          {
+            "topic": "Natural Language Processing (NLP)",
+            "concepts": ["Tokenization", "Embeddings (Word2Vec, BERT)", "Seq2Seq models"],
+            "description": "Process and model textual data."
+          },
+          {
+            "topic": "Reinforcement Learning",
+            "concepts": ["Markov Decision Processes", "Q-Learning", "Policy gradients"],
+            "description": "Train agents to make decisions in environments."
+          }
+        ],
+        "advanced": [
+          {
+            "topic": "Advanced Models & Architectures",
+            "concepts": ["Transformers, Attention, GPT / BERT style models", "Diffusion models", "Graph Neural Networks"],
+            "description": "Work with cutting-edge architectures."
+          },
+          {
+            "topic": "Multimodal & Cross-domain Models",
+            "concepts": ["Vision-Language models", "Audio-Visual models", "Cross-modal embeddings"],
+            "description": "Combine different types of data in a unified model."
+          },
+          {
+            "topic": "Production ML / MLOps",
+            "concepts": ["Model deployment", "Serving", "Monitoring & drift detection", "Scalability / latency"],
+            "description": "Make models robust and deployable in real-world systems."
+          }
+        ],
+        "expert": [
+          {
+            "topic": "Research & Innovations",
+            "concepts": ["Large Language Models", "Meta-learning", "Neural Architecture Search", "Self-supervised learning"],
+            "description": "Push state-of-the-art boundaries and experiment with new methods."
+          },
+          {
+            "topic": "AI Governance & Ethics",
+            "concepts": ["Fairness / Bias detection", "Explainability / Interpretability", "Privacy / Differential Privacy", "Regulation compliance"],
+            "description": "Ensure AI systems are responsible, safe, and accountable."
+          },
+          {
+            "topic": "Hardware & Distributed Training",
+            "concepts": ["TPUs / GPUs / IPUs", "Model parallelism", "Data parallelism", "Efficient distributed systems"],
+            "description": "Optimize models and training across advanced hardware."
+          },
+          {
+            "topic": "AI Leadership & Strategy",
+            "concepts": ["Team leadership", "Research vs product trade-offs", "Roadmapping for AI products", "Cross-functional alignment"],
+            "description": "Lead AI-driven technology initiatives at scale."
+          }
+        ]
+      }
+    },
+    {
+      "title": "Cloud Computing Roadmap",
+      "description": "Gain mastery of cloud platforms and integrate them into data, AI and engineering workflows.",
+      "image": "https://cdn.simpleicons.org/googlecloud/4285F4",
+      "difficulty": "intermediate",
+      "tools": ["AWS, GCP, Azure", "Terraform / CloudFormation / ARM", "Kubernetes", "Docker", "Jenkins / GitHub Actions", "Monitoring (CloudWatch, Prometheus, etc.)"],
+      "levels": {
+        "beginner": [
+          {
+            "topic": "Cloud Fundamentals",
+            "concepts": ["IaaS / PaaS / SaaS", "Public / Private / Hybrid clouds", "Major providers (AWS, GCP, Azure)"],
+            "description": "Understand the building blocks and models of cloud computing."
+          },
+          {
+            "topic": "Core Cloud Services",
+            "concepts": ["Compute (VMs, containers)", "Storage (object / block / file)", "Networking (VPC, subnets)"],
+            "description": "Familiarize yourself with essential cloud services."
+          },
+          {
+            "topic": "Identity & Access Management",
+            "concepts": ["IAM / Roles / Policies", "Encryption", "Security basics", "Billing / Cost control"],
+            "description": "Learn to secure access and manage costs in cloud."
+          }
+        ],
+        "intermediate": [
+          {
+            "topic": "Application Hosting & Containers",
+            "concepts": ["Containers (Docker)", "Kubernetes / EKS / GKE / AKS", "Serverless (Lambda, Cloud Functions)"],
+            "description": "Deploy applications and services in cloud-native ways."
+          },
+          {
+            "topic": "Data & Analytics Services",
+            "concepts": ["Data warehouses", "Data lakes", "Stream processing (Kinesis, Pub/Sub)", "Managed database services"],
+            "description": "Use cloud tools for storing and analyzing data."
+          },
+          {
+            "topic": "Security & Networking",
+            "concepts": ["VPC peering / transit", "Load balancing", "CDN / edge caching", "Network security"],
+            "description": "Design secure, performant network architectures."
+          }
+        ],
+        "advanced": [
+          {
+            "topic": "DevOps & Automation",
+            "concepts": ["CI/CD pipelines", "Infrastructure as Code", "Configuration management", "GitOps"],
+            "description": "Automate deployment, configuration, and infrastructure."
+          },
+          {
+            "topic": "Big Data & ML Services",
+            "concepts": ["Managed ML platforms (SageMaker, Vertex AI, Azure ML)", "BigQuery / Redshift / Snowflake", "Data pipelines / ETL in cloud"],
+            "description": "Leverage cloud-native AI and data processing services."
+          },
+          {
+            "topic": "Cost & Performance Tuning",
+            "concepts": ["Auto-scaling", "Reserved / Spot instances", "Cost allocation / tagging", "Performance monitoring"],
+            "description": "Optimize costs and performance in cloud environments."
+          }
+        ],
+        "expert": [
+          {
+            "topic": "Multi-cloud & Hybrid Cloud",
+            "concepts": ["Cross-cloud architectures", "Cloud migration", "Consistency across platforms"],
+            "description": "Design systems spanning multiple clouds or hybrid setups."
+          },
+          {
+            "topic": "Disaster Recovery & Resiliency",
+            "concepts": ["Backup / replication", "Failover strategies", "Business continuity designs"],
+            "description": "Build systems tolerant to region-level or cloud provider failures."
+          },
+          {
+            "topic": "Cloud Governance & Strategy",
+            "concepts": ["Governance models", "Security compliance", "Team structure", "Vendor strategy"],
+            "description": "Drive cloud adoption and policy across organizations."
+          }
+        ]
+      }
+    },
+    {
+      "title": "Data Visualization Roadmap",
+      "description": "Master data visualization skills and tools for communicating insights effectively.",
+      "image": "https://cdn-icons-png.flaticon.com/512/2103/2103630.png",
+      "difficulty": "beginner",
+      "tools": ["Power BI", "Tableau", "D3.js", "Plotly / Dash", "Matplotlib / Seaborn", "ggplot2", "Leaflet / Mapbox", "Figma / Illustrator"],
+      "levels": {
+        "beginner": [
+          {
+            "topic": "Introduction & Principles",
+            "concepts": ["Purpose of visualization", "Data-ink ratio", "Color theory", "Accessibility"],
+            "description": "Learn the design fundamentals behind good visual communication."
+          },
+          {
+            "topic": "Basic Charts",
+            "concepts": ["Bar", "Line", "Pie", "Scatter", "Histogram"],
+            "description": "Build foundational charts to represent data."
+          },
+          {
+            "topic": "Basic Tools",
+            "concepts": ["Excel / Google Sheets charts", "Tableau public", "Power BI basics"],
+            "description": "Use mainstream tools to bring charts to life."
+          }
+        ],
+        "intermediate": [
+          {
+            "topic": "Advanced & Composite Visuals",
+            "concepts": ["Heatmap", "Tree Map", "Choropleth maps", "Network graphs"],
+            "description": "Visualize complex relationships and multidimensional data."
+          },
+          {
+            "topic": "BI / Dashboard Tools",
+            "concepts": ["Power BI", "Tableau", "Looker", "Qlik"],
+            "description": "Use professional tools to build dashboards and reports."
+          },
+          {
+            "topic": "Visualization with Code",
+            "concepts": ["Matplotlib", "Seaborn", "Plotly / Altair", "ggplot2"],
+            "description": "Generate visualizations programmatically."
+          },
+          {
+            "topic": "Dashboard Design Principles",
+            "concepts": ["Layout", "Interactivity", "Drill-downs / filters", "Storytelling"],
+            "description": "Design dashboards that guide users and answer questions."
+          }
+        ],
+        "advanced": [
+          {
+            "topic": "Interactive Visualizations / Web",
+            "concepts": ["D3.js", "Bokeh", "Dash / Streamlit", "Shiny"],
+            "description": "Create rich, interactive visual dashboards for web."
+          },
+          {
+            "topic": "Geospatial & Maps",
+            "concepts": ["GIS basics", "Leaflet / Mapbox", "GeoJSON", "Spatial layers"],
+            "description": "Visualize spatial and location-based data."
+          },
+          {
+            "topic": "Streaming & Real-time Visuals",
+            "concepts": ["Live dashboards", "WebSockets / streaming APIs", "Time-series charts"],
+            "description": "Present continuously updating data to users."
+          },
+          {
+            "topic": "Advanced Design / Research",
+            "concepts": ["Cognitive load", "Perceptual psychology", "Custom visuals (SVG / WebGL)", "Visualization research"],
+            "description": "Go beyond standard charts to craft innovative visual insights."
+          }
+        ],
+        "expert": [
+          {
+            "topic": "Custom Visual Components",
+            "concepts": ["SVG / Canvas / WebGL", "Custom chart libraries", "Render optimization"],
+            "description": "Build visualization components from scratch."
+          },
+          {
+            "topic": "Visualization Tooling & Platform Design",
+            "concepts": ["Scalability", "Security", "Embed / white-labeling", "Governance"],
+            "description": "Design enterprise-grade visualization platforms."
+          },
+          {
+            "topic": "Research & New Techniques",
+            "concepts": ["Perception studies", "Novel visual encodings", "Visual analytics"],
+            "description": "Contribute to the visualization field with new ideas."
+          }
+        ]
+      }
+    },{
+  "title": "Modern DSA for Data Science & AI Roadmap",
+  "description": "A practical roadmap to mastering Data Structures & Algorithms for data science, analytics, and machine learning — from computational thinking to scalable algorithmic systems powering AI workloads.",
+  "image": "https://cdn.simpleicons.org/python/3776AB",
+  "difficulty": "beginner",
+  "tools": [
+    "Python (NumPy, pandas, SciPy)",
+    "Jupyter / VS Code",
+    "scikit-learn",
+    "PyTorch / TensorFlow",
+    "NetworkX",
+    "Polars / Dask",
+    "SQL + dbt",
+    "Airflow / Dagster",
+    "Git / GitHub",
+    "Google Colab / Kaggle Notebooks"
+  ],
+  "levels": {
+    "beginner": [
+      {
+        "topic": "Foundations of Computational Thinking",
+        "concepts": [
+          "What are Algorithms?",
+          "Complexity (Big-O, Big-Ω, Big-Θ)",
+          "Time vs Space Trade-offs",
+          "Algorithm Design vs Implementation",
+          "Why DSA matters in Data Science"
+        ],
+        "description": "Build intuition for algorithmic problem-solving and efficiency — the foundation for scalable data workflows."
+      },
+      {
+        "topic": "Core Python Structures",
+        "concepts": [
+          "Lists, Tuples, Dictionaries, Sets",
+          "Mutable vs Immutable Types",
+          "Iterators, Generators, Comprehensions",
+          "Stack & Queue (using lists, deque)",
+          "Defaultdict, Counter (collections module)"
+        ],
+        "description": "Master Python’s built-in data structures for everyday data handling."
+      },
+      {
+        "topic": "Data Manipulation Basics",
+        "concepts": [
+          "Vectorization (NumPy)",
+          "DataFrames & Series (pandas)",
+          "Indexing, Slicing, Filtering",
+          "Aggregation, GroupBy",
+          "Merging, Joins, Concatenation"
+        ],
+        "description": "Learn how DSA principles apply to efficient data manipulation in analytical workflows."
+      },
+      {
+        "topic": "Mathematical Foundations",
+        "concepts": [
+          "Linear Algebra (vectors, matrices, dot product)",
+          "Probability & Combinatorics",
+          "Logarithms & Exponentials",
+          "Modular Arithmetic",
+          "Basic Graph & Matrix Representations"
+        ],
+        "description": "Build the mathematical intuition necessary to design and analyze algorithms used in ML and analytics."
+      }
+    ],
+    "intermediate": [
+      {
+        "topic": "Advanced Data Structures",
+        "concepts": [
+          "Linked Lists (Singly, Doubly)",
+          "Stacks, Queues, Priority Queues (Heap)",
+          "Hash Tables & Dictionaries",
+          "Trees (Binary, AVL, B-Trees)",
+          "Graphs (Adjacency List / Matrix)"
+        ],
+        "description": "Understand core data structures, their operations, and how they underpin modern data systems."
+      },
+      {
+        "topic": "Algorithm Design Paradigms",
+        "concepts": [
+          "Recursion & Backtracking",
+          "Divide and Conquer",
+          "Dynamic Programming (DP)",
+          "Greedy Algorithms",
+          "Sliding Window / Two-Pointer Techniques"
+        ],
+        "description": "Learn the core patterns for designing efficient and reusable algorithms."
+      },
+      {
+        "topic": "Sorting & Searching",
+        "concepts": [
+          "QuickSort, MergeSort, HeapSort",
+          "Binary Search Variants",
+          "Top-K Selection (Heap/Numpy argsort)",
+          "External Sorting (for Big Data)",
+          "Distributed Sorting (Spark/Dask)"
+        ],
+        "description": "Efficiently organize and retrieve data — critical for analytical and ML workloads."
+      },
+      {
+        "topic": "Graphs & Networks",
+        "concepts": [
+          "DFS, BFS",
+          "Shortest Paths (Dijkstra, Bellman-Ford)",
+          "MST (Kruskal, Prim)",
+          "Topological Sorting",
+          "PageRank / Centrality Measures"
+        ],
+        "description": "Understand graph structures for social networks, recommendation systems, and feature relationships."
+      },
+      {
+        "topic": "Data Handling for Analytics",
+        "concepts": [
+          "Streaming Data Structures (Reservoir Sampling, Count-Min Sketch)",
+          "Approximation Algorithms",
+          "Bloom Filters, HyperLogLog",
+          "Windowed Computations",
+          "Columnar vs Row-based Storage"
+        ],
+        "description": "Use probabilistic and streaming algorithms for large-scale, real-time analytics."
+      }
+    ],
+    "advanced": [
+      {
+        "topic": "Optimization & Numerical Algorithms",
+        "concepts": [
+          "Gradient Descent & Variants",
+          "Convex Optimization",
+          "Coordinate Descent, ADAM, RMSProp",
+          "Linear Programming (Simplex, Dual)",
+          "Eigenvalue Decomposition, SVD"
+        ],
+        "description": "Learn the algorithmic backbone of machine learning optimization."
+      },
+      {
+        "topic": "Advanced Graph Algorithms",
+        "concepts": [
+          "Graph Traversals in Large Systems",
+          "Community Detection",
+          "Graph Sampling & Embeddings",
+          "Graph Neural Network Foundations",
+          "NetworkX / PyTorch Geometric"
+        ],
+        "description": "Work with graph-based algorithms essential for modern AI and recommendation systems."
+      },
+      {
+        "topic": "Data Indexing & Query Acceleration",
+        "concepts": [
+          "Spatial Indexes (R-tree, KD-tree)",
+          "Inverted Index (Search Engines)",
+          "Vector Index (FAISS, Annoy, Milvus)",
+          "Trie / Prefix Tree",
+          "Bloom & Bitmap Indexes"
+        ],
+        "description": "Explore structures powering fast search, retrieval, and vector similarity operations."
+      },
+      {
+        "topic": "Parallel & Distributed Algorithms",
+        "concepts": [
+          "MapReduce / Spark",
+          "Shuffling & Partitioning",
+          "Distributed Aggregation",
+          "Approximation & Sampling at Scale",
+          "Dataflow Optimization"
+        ],
+        "description": "Understand how classical algorithms adapt to distributed and cloud data processing frameworks."
+      },
+      {
+        "topic": "Memory & Performance Engineering",
+        "concepts": [
+          "Cache Efficiency & Locality",
+          "Vectorized Operations (SIMD)",
+          "Memory Profiling & Optimization",
+          "Data Layout (AoS vs SoA)",
+          "I/O Bound vs CPU Bound Tasks"
+        ],
+        "description": "Design data workflows optimized for performance in analytical and ML pipelines."
+      }
+    ],
+    "expert": [
+      {
+        "topic": "DSA for Machine Learning Systems",
+        "concepts": [
+          "Matrix Operations & Tensor Algebra",
+          "Batching & Sharding Strategies",
+          "Sparse vs Dense Representations",
+          "GPU-Optimized Algorithms (CUDA, XLA)",
+          "Automatic Differentiation Internals"
+        ],
+        "description": "Delve into the low-level algorithms that power ML training and inference systems."
+      },
+      {
+        "topic": "Feature Engineering Algorithms",
+        "concepts": [
+          "Dimensionality Reduction (PCA, t-SNE, UMAP)",
+          "Discretization & Binning",
+          "Feature Selection (Mutual Info, LASSO)",
+          "Feature Hashing",
+          "Vectorization & Embedding Algorithms"
+        ],
+        "description": "Apply algorithmic principles to transform raw data into model-ready features."
+      },
+      {
+        "topic": "Optimization for Deep Learning",
+        "concepts": [
+          "Stochastic Optimization",
+          "Adaptive Gradient Methods",
+          "Regularization Techniques (Dropout, Weight Decay)",
+          "Gradient Clipping",
+          "Hyperparameter Search (Bayesian, Grid, Random)"
+        ],
+        "description": "Understand the algorithmic mechanics of deep learning optimization and training stability."
+      },
+      {
+        "topic": "Scalable AI Systems",
+        "concepts": [
+          "Parameter Servers",
+          "Model Parallelism / Data Parallelism",
+          "Checkpointing & Gradient Accumulation",
+          "Federated Learning Algorithms",
+          "Vector Databases & ANN Indexes"
+        ],
+        "description": "Architect and understand distributed AI algorithms and infrastructure-level optimization."
+      },
+      {
+        "topic": "Algorithmic Fairness & Interpretability",
+        "concepts": [
+          "Explainability (SHAP, LIME)",
+          "Bias Detection Algorithms",
+          "Fairness Metrics (Demographic Parity, Equalized Odds)",
+          "Causal Inference (Do-Calculus)",
+          "Counterfactual Reasoning"
+        ],
+        "description": "Incorporate ethical and interpretable algorithmic design in AI systems."
+      },
+      {
+        "topic": "Real-Time & Online Learning Algorithms",
+        "concepts": [
+          "Streaming ML (Online Gradient Descent)",
+          "Bandit Algorithms (UCB, Thompson Sampling)",
+          "Adaptive Sampling & Active Learning",
+          "Reinforcement Learning Basics",
+          "Concept Drift Detection"
+        ],
+        "description": "Design algorithms that adapt dynamically to evolving data streams and real-time decision systems."
+      },
+      {
+        "topic": "CI/CD & Testing for Algorithms",
+        "concepts": [
+          "Unit Testing for Algorithms (pytest)",
+          "Profiling & Benchmarking",
+          "Version Control for Experiments",
+          "Reproducibility Pipelines (MLflow, DVC)",
+          "Automated Deployment of Models"
+        ],
+        "description": "Bring software-engineering rigor to algorithm and ML lifecycle management."
+      }
+    ]
+  }
+},{
+  "title": "Modern AI & ML Roadmap",
+  "description": "A future-ready roadmap to mastering Artificial Intelligence and Machine Learning — from mathematical foundations and classical ML to deep learning, generative AI, and production MLOps systems.",
+  "image": "https://cdn.simpleicons.org/pytorch/EE4C2C",
+  "difficulty": "beginner",
+  "tools": [
+    "Python (NumPy, pandas, scikit-learn)",
+    "PyTorch / TensorFlow / JAX",
+    "Hugging Face Transformers",
+    "Weights & Biases / MLflow",
+    "FastAPI / Streamlit / Gradio",
+    "Docker / Kubernetes",
+    "Airflow / Dagster",
+    "Git / GitHub / DVC",
+    "LangChain / LlamaIndex",
+    "Google Colab / AWS Sagemaker / Vertex AI"
+  ],
+  "levels": {
+    "beginner": [
+      {
+        "topic": "Mathematical Foundations",
+        "concepts": [
+          "Linear Algebra (Vectors, Matrices, Eigenvalues)",
+          "Calculus (Derivatives, Gradients, Partial Derivatives)",
+          "Probability & Statistics (Distributions, Bayes' Theorem)",
+          "Optimization Basics (Gradient Descent Intuition)",
+          "Matrix Operations for ML"
+        ],
+        "description": "Establish the mathematical grounding required for understanding ML algorithms."
+      },
+      {
+        "topic": "Python for AI & ML",
+        "concepts": [
+          "NumPy Arrays and Broadcasting",
+          "Pandas for Data Manipulation",
+          "Matplotlib / Seaborn for Visualization",
+          "Scikit-learn API Overview",
+          "Object-Oriented Programming for ML Projects"
+        ],
+        "description": "Build fluency in Python’s scientific computing ecosystem for AI experimentation."
+      },
+      {
+        "topic": "Data Preprocessing & Cleaning",
+        "concepts": [
+          "Handling Missing Values",
+          "Encoding Categorical Variables",
+          "Feature Scaling (StandardScaler, MinMaxScaler)",
+          "Outlier Detection & Treatment",
+          "Data Splitting & Cross-validation"
+        ],
+        "description": "Learn how to prepare high-quality datasets for reliable machine learning models."
+      },
+      {
+        "topic": "Exploratory Data Analysis (EDA)",
+        "concepts": [
+          "Univariate & Multivariate Analysis",
+          "Correlation & Covariance",
+          "Dimensionality Reduction (PCA basics)",
+          "Visualization of Distributions & Relationships",
+          "Data Leakage Prevention"
+        ],
+        "description": "Understand data characteristics and relationships to guide feature design and modeling."
+      }
+    ],
+    "intermediate": [
+      {
+        "topic": "Classical Machine Learning",
+        "concepts": [
+          "Linear & Logistic Regression",
+          "Decision Trees & Random Forests",
+          "Support Vector Machines (SVM)",
+          "Naive Bayes Classifier",
+          "k-Nearest Neighbors (KNN)"
+        ],
+        "description": "Learn and apply foundational supervised learning algorithms for structured data."
+      },
+      {
+        "topic": "Unsupervised Learning",
+        "concepts": [
+          "Clustering (K-Means, DBSCAN, Hierarchical)",
+          "Dimensionality Reduction (PCA, t-SNE, UMAP)",
+          "Anomaly Detection",
+          "Association Rule Learning (Apriori, FP-Growth)",
+          "Density Estimation (Gaussian Mixture Models)"
+        ],
+        "description": "Discover hidden patterns and groupings in unlabeled data."
+      },
+      {
+        "topic": "Feature Engineering & Selection",
+        "concepts": [
+          "Feature Importance & Permutation Tests",
+          "Polynomial & Interaction Features",
+          "Encoding Schemes (One-Hot, Target Encoding)",
+          "Feature Selection (LASSO, RFE)",
+          "Dimensionality Reduction for Efficiency"
+        ],
+        "description": "Develop and refine features to improve model accuracy and interpretability."
+      },
+      {
+        "topic": "Model Evaluation & Validation",
+        "concepts": [
+          "Confusion Matrix, ROC-AUC, Precision-Recall",
+          "Regression Metrics (MSE, MAE, R²)",
+          "Cross-Validation Strategies (K-Fold, Stratified)",
+          "Bias-Variance Tradeoff",
+          "Hyperparameter Tuning (Grid, Random, Bayesian Search)"
+        ],
+        "description": "Measure, interpret, and optimize model performance using robust evaluation techniques."
+      },
+      {
+        "topic": "Pipelines & Automation",
+        "concepts": [
+          "Scikit-learn Pipelines",
+          "Data Preprocessing Pipelines",
+          "Joblib for Model Serialization",
+          "Feature Stores",
+          "Experiment Tracking (MLflow, W&B)"
+        ],
+        "description": "Automate repeatable ML workflows and ensure reproducibility."
+      }
+    ],
+    "advanced": [
+      {
+        "topic": "Deep Learning Foundations",
+        "concepts": [
+          "Neural Network Architecture (Feedforward, Backpropagation)",
+          "Activation Functions",
+          "Loss Functions & Optimization",
+          "Regularization (Dropout, L2)",
+          "Batch Normalization & Initialization"
+        ],
+        "description": "Build the conceptual foundation of neural networks and deep learning architectures."
+      },
+      {
+        "topic": "Computer Vision",
+        "concepts": [
+          "Convolutional Neural Networks (CNNs)",
+          "Pooling & Padding",
+          "Transfer Learning (ResNet, EfficientNet)",
+          "Image Augmentation & Preprocessing",
+          "Object Detection (YOLO, Faster R-CNN)"
+        ],
+        "description": "Understand the architecture and training of deep learning models for vision tasks."
+      },
+      {
+        "topic": "Natural Language Processing (NLP)",
+        "concepts": [
+          "Tokenization & Embeddings (Word2Vec, GloVe)",
+          "RNNs, LSTMs, GRUs",
+          "Attention Mechanism & Transformers",
+          "Pretrained Models (BERT, GPT, T5)",
+          "Text Classification & Summarization"
+        ],
+        "description": "Explore algorithms that enable machines to understand and generate human language."
+      },
+      {
+        "topic": "Reinforcement Learning",
+        "concepts": [
+          "Markov Decision Processes (MDPs)",
+          "Policy vs Value Methods",
+          "Q-Learning & SARSA",
+          "Deep Q-Networks (DQN)",
+          "Policy Gradient Methods (PPO, A3C)"
+        ],
+        "description": "Learn how agents make decisions through reward-based learning in dynamic environments."
+      },
+      {
+        "topic": "Model Deployment & Serving",
+        "concepts": [
+          "Model Serialization (ONNX, TorchScript)",
+          "REST APIs (FastAPI, Flask)",
+          "Batch vs Real-time Inference",
+          "Model Monitoring & Drift Detection",
+          "Containerization (Docker, Kubernetes)"
+        ],
+        "description": "Learn to deploy ML models at scale with reliability and monitoring."
+      }
+    ],
+    "expert": [
+      {
+        "topic": "Generative AI & Foundation Models",
+        "concepts": [
+          "Transformer Architecture in Depth",
+          "Large Language Models (GPT, LLaMA, Mistral)",
+          "Diffusion Models (Stable Diffusion)",
+          "Multimodal AI (CLIP, Flamingo, Gemini)",
+          "Prompt Engineering & Fine-tuning"
+        ],
+        "description": "Master the architectures and techniques behind modern generative and multimodal AI systems."
+      },
+      {
+        "topic": "MLOps & Production AI Systems",
+        "concepts": [
+          "Continuous Training (CT) & Continuous Deployment (CD)",
+          "Feature Store Management",
+          "Data Versioning (DVC)",
+          "Model Registry & Lineage",
+          "Monitoring, Retraining, and Governance"
+        ],
+        "description": "Implement scalable production systems for machine learning operations and lifecycle management."
+      },
+      {
+        "topic": "AI Ethics, Fairness & Explainability",
+        "concepts": [
+          "Model Explainability (SHAP, LIME)",
+          "Bias Mitigation Techniques",
+          "Fairness Metrics (Equalized Odds, Demographic Parity)",
+          "Privacy-Preserving ML (Differential Privacy, Federated Learning)",
+          "Causal Inference & Counterfactual Analysis"
+        ],
+        "description": "Integrate ethical principles and interpretability in AI systems design and deployment."
+      },
+      {
+        "topic": "LLMOps & Vector Databases",
+        "concepts": [
+          "Retrieval-Augmented Generation (RAG)",
+          "Vector Stores (FAISS, Milvus, Pinecone)",
+          "Embeddings & Similarity Search",
+          "Prompt Orchestration (LangChain, LlamaIndex)",
+          "Hybrid Search & Context Management"
+        ],
+        "description": "Design and optimize large-scale LLM-based applications for enterprise AI workflows."
+      },
+      {
+        "topic": "AI Systems Optimization",
+        "concepts": [
+          "Quantization & Pruning",
+          "Distillation & Compression",
+          "Memory-Efficient Attention",
+          "Multi-GPU Training & Distributed Inference",
+          "Energy & Cost Optimization in AI Workloads"
+        ],
+        "description": "Engineer high-performance, resource-efficient AI systems for large-scale deployment."
+      },
+      {
+        "topic": "Research & Innovation",
+        "concepts": [
+          "Reading and Reproducing Research Papers",
+          "Open-Source Contributions",
+          "Experimentation Frameworks",
+          "Synthetic Data Generation",
+          "AI Model Benchmarking & Leaderboards"
+        ],
+        "description": "Engage in advanced AI research, contribute to open science, and push state-of-the-art boundaries."
+      }
+    ]
+  }
+},
+    {
+      "title": "Docker Roadmap",
+      "description": "Master containerization using Docker to support consistent, reproducible environments in data, ML, and application workflows.",
+      "image": "https://cdn.simpleicons.org/docker/0AF",
+      "difficulty": "beginner",
+      "tools": ["Docker (Engine / Desktop)", "Docker Compose", "Docker Swarm", "Dry-run / buildkit", "Kubernetes integration", "Portainer / UI tools", "CI/CD (GitHub Actions, Jenkins)"],
+      "levels": {
+        "beginner": [
+          {
+            "topic": "Introduction to Containers",
+            "concepts": ["What is Docker?", "Containers vs Virtual Machines", "Use Cases in Data & ML"],
+            "description": "Understand why containerization matters and how it's used."
+          },
+          {
+            "topic": "Installation & Basic Commands",
+            "concepts": ["docker run", "docker ps", "docker stop / rm", "docker pull"],
+            "description": "Get Docker installed and run your first containers."
+          },
+          {
+            "topic": "Images & Containers",
+            "concepts": ["docker images", "docker inspect", "docker exec", "docker logs"],
+            "description": "Manage images and container lifecycle."
+          }
+        ],
+        "intermediate": [
+          {
+            "topic": "Dockerfile & Custom Images",
+            "concepts": ["FROM / RUN / COPY / CMD / ENTRYPOINT", "multi-stage builds"],
+            "description": "Write Dockerfiles to build reproducible images."
+          },
+          {
+            "topic": "Volumes & Storage",
+            "concepts": ["docker volume", "bind mounts", "persisting data"],
+            "description": "Handle data storage across container restarts."
+          },
+          {
+            "topic": "Networking",
+            "concepts": ["bridge networks", "docker network", "port mapping", "aliasing"],
+            "description": "Connect containers & expose services."
+          },
+          {
+            "topic": "Docker Compose",
+            "concepts": ["docker-compose.yml", "multi-container orchestration", "dependency ordering"],
+            "description": "Define and start multi-container applications easily."
+          }
+        ],
+        "advanced": [
+          {
+            "topic": "Security Best Practices",
+            "concepts": ["user namespace / rootless mode", "image scanning", "secrets management"],
+            "description": "Harden containers for production use."
+          },
+          {
+            "topic": "Optimization / Efficiency",
+            "concepts": ["layer caching", "image size minimization", "buildkit"],
+            "description": "Make images leaner and builds faster."
+          },
+          {
+            "topic": "Orchestration Intro (Swarm / Kubernetes Integration)",
+            "concepts": ["Docker Swarm basics", "Docker as a container runtime for Kubernetes", "Compose on Kubernetes"],
+            "description": "Use Docker in a container orchestration environment."
+          },
+          {
+            "topic": "CI/CD Integration",
+            "concepts": ["Docker in pipelines", "GitHub Actions / Jenkins", "Building & pushing images"],
+            "description": "Embed Docker in your automation workflows."
+          }
+        ],
+        "expert": [
+          {
+            "topic": "Base / Custom Images",
+            "concepts": ["FROM scratch", "Alpine vs Debian base", "security / minimal images"],
+            "description": "Create and maintain secure base images."
+          },
+          {
+            "topic": "Docker Internals",
+            "concepts": ["namespaces", "cgroups", "union filesystems / overlayFS", "container runtime (containerd / runc)"],
+            "description": "Understand what happens under the hood when containers run."
+          },
+          {
+            "topic": "Monitoring & Logging",
+            "concepts": ["cAdvisor / stats API", "Prometheus integration", "logging drivers", "centralized logging"],
+            "description": "Observe and troubleshoot containerized systems at scale."
+          }
+        ]
+      }
+    }
+  ]
+}
